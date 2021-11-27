@@ -48,6 +48,8 @@ namespace jdj {
 
 
         public Transform tmpCamera;
+        public GameObject[] woods;
+
 
 
         private float xzSpeed;
@@ -55,6 +57,16 @@ namespace jdj {
         private bool isSlideable = false;
 
 
+
+        private int woodCount = 0;
+        public int WoodCount {
+            set {
+                woodCount = Mathf.Clamp(value, 0, 4);
+                for (int i = 0; i < 4; i++)
+                    woods[i].SetActive(i < woodCount);
+            }
+            get => woodCount;
+        }
 
 
 
@@ -212,7 +224,6 @@ namespace jdj {
             foreach (ContactPoint contact in collisionInfo.contacts)
             {
                 if((1.0f - Vector3.Dot(Vector3.up, contact.normal)) * Mathf.Rad2Deg <  20.0f) {
-                    Debug.Log($"{contact.thisCollider.transform.name}");
                     isGround = true;
                     break;
                 }
