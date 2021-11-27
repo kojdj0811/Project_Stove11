@@ -15,7 +15,9 @@ namespace jdj {
 
         private Transform trans;
         private Rigidbody rigid;
-        private CapsuleCollider capsuleColl;
+        public CapsuleCollider capsuleColl;
+        public CapsuleCollider slipperyWallPhysic;
+        
         public PhysicMaterial physicMaterial;
 
         public Animator animator;
@@ -65,7 +67,6 @@ namespace jdj {
             animId_SlideSpeed = Animator.StringToHash("SlideSpeed");
             animId_IsSlideable = Animator.StringToHash("IsSlideable");
 
-            capsuleColl = GetComponent<CapsuleCollider>();
             colliderCenterY_stand = capsuleColl.center.y;
             colliderHeight_stand = capsuleColl.height;
 
@@ -97,6 +98,7 @@ namespace jdj {
 
                     capsuleColl.center = Vector3.up * colliderCenterY_sliding;
                     capsuleColl.height = colliderHeight_sliding;
+                    slipperyWallPhysic.enabled = false;
 
                     physicMaterial.dynamicFriction = 0.0f;
                     physicMaterial.staticFriction = 0.0f;
@@ -169,6 +171,8 @@ namespace jdj {
             && rigid.velocity.magnitude < 9.0f) {
                 capsuleColl.center = Vector3.up * colliderCenterY_stand;
                 capsuleColl.height = colliderHeight_stand;
+                slipperyWallPhysic.enabled = true;
+
                 animator.SetFloat(animId_SlideSpeed, rigid.velocity.magnitude);
                 animator.SetBool(animId_IsSlideable, false);
 
@@ -205,7 +209,15 @@ namespace jdj {
 
 
         void OnCollisionStay (Collision collisionInfo) {
-            isGround = true;
+            foreach (ContactPoint contact in collisionInfo.contacts)
+            {
+                if((1.0f - Vector3.Dot(Vector3.up, contact.normal)) * Mathf.Rad2Deg <  20.0f) {
+                    Debug.Log($"{contact.thisCollider.transform.name}");
+                    isGround = true;
+                    break;
+                }
+            }
+
         }
 
         void OnCollisionExit (Collision collisionInfo) {
