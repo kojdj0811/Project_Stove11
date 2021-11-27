@@ -17,17 +17,4 @@ public class FireWood : MonoBehaviour
         }
     }
 
-
-
-
-
-    //**Minsu
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag.Equals("Player"))
-        {
-            Debug.Log("Got FireWood!");
-            GameObject.Destroy(this.gameObject);
-        }
-    }
 }
