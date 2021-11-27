@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Thorn : MonoBehaviour
 {
@@ -11,9 +12,7 @@ public class Thorn : MonoBehaviour
             other.GetComponent<jdj.WanderfullCharacterController>();
             if (other)
             {
-                Debug.Log("replay");
-                // 플레이어 리젠
-                MinsuTransitionManager.DoRetryTransition();
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 // 가시에 찔리는 사운드
             }
         }

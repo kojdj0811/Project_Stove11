@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrornMonster : MonoBehaviour
 {
@@ -26,14 +27,11 @@ public class TrornMonster : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("replay");
             other.GetComponent<jdj.WanderfullCharacterController>();
             if (other)
             {
-                Debug.Log("replay");
-                // 플레이어 죽음
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 // 가시 사운드
-                // 리젠
             }
         }
     }
