@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-
 public class PlayUI : MonoBehaviour
 {
     //  public static PlayUI instance;
@@ -24,13 +23,9 @@ public class PlayUI : MonoBehaviour
     // public  GameObject   turnOffQuestionPanel;
     public RectTransform turnOffQuestionPanel_rect;
 
-    [Header("Button")]
-    public RectTransform retryButton;
+    [Header("UIParticle")]
 
-
-    bool check = false;
-    float time = 0;
-
+    public ParticleSystem retryParticle;
 
     public void OnClickTurnOffCreateButton()
     {
@@ -59,13 +54,36 @@ public class PlayUI : MonoBehaviour
     }
     public void OnClickRetry()
     {
-
+        retryParticle.Play();
         SoundManager.instance.PlayEffect(clickClip);  
         // retryButton.DOScale(new Vector3(.5f, .5f, 0), .5f).SetLoops(-1,LoopType.Yoyo);
 
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
