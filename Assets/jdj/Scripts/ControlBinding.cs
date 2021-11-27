@@ -50,9 +50,9 @@ public class ControlBinding : PlayerActionSet
         controlBinding.Right.AddDefaultBinding( Key.D );
 
         controlBinding.Left.AddDefaultBinding( InputControlType.LeftStickLeft );
-        // controlBinding.Right.AddDefaultBinding( InputControlType.LeftStickRight );
-        // controlBinding.Up.AddDefaultBinding( InputControlType.LeftStickUp );
-        // controlBinding.Down.AddDefaultBinding( InputControlType.LeftStickDown );
+        controlBinding.Right.AddDefaultBinding( InputControlType.LeftStickRight );
+        controlBinding.Up.AddDefaultBinding( InputControlType.LeftStickUp );
+        controlBinding.Down.AddDefaultBinding( InputControlType.LeftStickDown );
 
         // controlBinding.Left.AddDefaultBinding( InputControlType.DPadLeft );
         // controlBinding.Right.AddDefaultBinding( InputControlType.DPadRight );
