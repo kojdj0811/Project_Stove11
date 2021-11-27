@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465791, g: 0.49641317, b: 0.57481784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -411,80 +411,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49497708}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &141418099
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 141418101}
-  - component: {fileID: 141418100}
-  m_Layer: 0
-  m_Name: Touch Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!20 &141418100
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141418099}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 4
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: 100
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 32
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &141418101
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141418099}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 611857779}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208456530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1083,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567416216}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &611857777
+--- !u!1 &599822553
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1165,79 +1091,106 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 611857779}
-  - component: {fileID: 611857778}
-  - component: {fileID: 611857780}
-  m_Layer: 0
-  m_Name: InControl
+  - component: {fileID: 599822555}
+  - component: {fileID: 599822554}
+  m_Layer: 5
+  m_Name: Touch Stick Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &611857778
+--- !u!114 &599822554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611857777}
+  m_GameObject: {fileID: 599822553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7b5e8de77c5b4597ae7fbfb49a95e22, type: 3}
+  m_Script: {fileID: 11500000, guid: 22f566de049b04240b6621f25c01d1f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logDebugInfo: 1
-  invertYAxis: 0
-  useFixedUpdate: 0
-  dontDestroyOnLoad: 1
-  suspendInBackground: 0
-  updateMode: 0
-  enableICade: 0
-  enableXInput: 0
-  xInputOverrideUpdateRate: 0
-  xInputUpdateRate: 0
-  xInputOverrideBufferSize: 0
-  xInputBufferSize: 0
-  enableNativeInput: 1
-  nativeInputEnableXInput: 1
-  nativeInputEnableMFi: 1
-  nativeInputPreventSleep: 0
-  nativeInputOverrideUpdateRate: 0
-  nativeInputUpdateRate: 0
---- !u!4 &611857779
+  anchor: 2
+  offsetUnitType: 0
+  offset: {x: 20, y: 20}
+  areaUnitType: 0
+  activeArea:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 50
+    height: 100
+  target: 1
+  snapAngles: 0
+  lockToAxis: 0
+  lowerDeadZone: 0.1
+  upperDeadZone: 0.9
+  inputCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  allowDragging: 0
+  allowDraggingAxis: 0
+  snapToInitialTouch: 1
+  resetWhenDone: 1
+  resetDuration: 0.1
+  ring:
+    idleSprite: {fileID: 21300000, guid: 6244232c1f7b94049aa3fc49270b0e36, type: 3}
+    busySprite: {fileID: 21300000, guid: 6244232c1f7b94049aa3fc49270b0e36, type: 3}
+    idleColor: {r: 1, g: 1, b: 1, a: 0.5}
+    busyColor: {r: 1, g: 1, b: 1, a: 1}
+    shape: 0
+    sizeUnitType: 0
+    size: {x: 20, y: 20}
+    lockAspectRatio: 1
+    worldSize: {x: 1.9999999, y: 1.9999999}
+  knob:
+    idleSprite: {fileID: 21300000, guid: 54a1d28b302b6484d8633cc09baf1238, type: 3}
+    busySprite: {fileID: 21300000, guid: 54a1d28b302b6484d8633cc09baf1238, type: 3}
+    idleColor: {r: 1, g: 1, b: 1, a: 0.5}
+    busyColor: {r: 1, g: 1, b: 1, a: 1}
+    shape: 0
+    sizeUnitType: 0
+    size: {x: 10, y: 10}
+    lockAspectRatio: 1
+    worldSize: {x: 0.99999994, y: 0.99999994}
+  knobRange: 7.5
+--- !u!4 &599822555
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611857777}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 599822553}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.8888893, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 141418101}
-  - {fileID: 1685000181}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 1864955000}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &611857780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611857777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6c474df4ff4c4f5bbabeb9f44d56014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  touchCamera: {fileID: 141418100}
-  controlsShowGizmos: 3
-  enableControlsOnTouch: 0
-  _controlsEnabled: 1
-  controlsLayer: 5
 --- !u!1 &635249992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,13 +1661,74 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487230113}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.10938167, y: 0.8754261, z: -0.40821788, w: 0.23456976}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 150, z: 0}
+--- !u!1 &1541110821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1541110823}
+  - component: {fileID: 1541110822}
+  m_Layer: 5
+  m_Name: Touch Button Control
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1541110822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541110821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c28010e244e4ca2ad9d7e8e71ecc50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchor: 8
+  offsetUnitType: 0
+  offset: {x: -10, y: 25}
+  lockAspectRatio: 1
+  target: 20
+  allowSlideToggle: 1
+  toggleOnLeave: 0
+  pressureSensitive: 0
+  button:
+    idleSprite: {fileID: 21300000, guid: 407bcdfe0e71249c998e8c6204913e70, type: 3}
+    busySprite: {fileID: 21300000, guid: 407bcdfe0e71249c998e8c6204913e70, type: 3}
+    idleColor: {r: 1, g: 1, b: 1, a: 0.5}
+    busyColor: {r: 1, g: 1, b: 1, a: 1}
+    shape: 0
+    sizeUnitType: 0
+    size: {x: 15, y: 15}
+    lockAspectRatio: 1
+    worldSize: {x: 1.4999999, y: 1.4999999}
+--- !u!4 &1541110823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541110821}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.8888893, y: -2.5000002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1864955000}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1607902333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1825,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607902333}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1685000180
+--- !u!1 &1686944640
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1819,59 +1833,72 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1685000181}
-  - component: {fileID: 1685000182}
-  m_Layer: 5
-  m_Name: Touch Button Control
+  - component: {fileID: 1686944642}
+  - component: {fileID: 1686944641}
+  m_Layer: 0
+  m_Name: Touch Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1685000181
+--- !u!20 &1686944641
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686944640}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 4
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 5
+  far clip plane: 15
+  field of view: 60
+  orthographic: 1
+  orthographic size: 5
+  m_Depth: 100
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 32
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1686944642
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685000180}
+  m_GameObject: {fileID: 1686944640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.8888893, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 611857779}
-  m_RootOrder: 1
+  m_Father: {fileID: 1864955000}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1685000182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685000180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c28010e244e4ca2ad9d7e8e71ecc50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anchor: 8
-  offsetUnitType: 0
-  offset: {x: -10, y: 10}
-  lockAspectRatio: 1
-  target: 19
-  allowSlideToggle: 1
-  toggleOnLeave: 0
-  pressureSensitive: 0
-  button:
-    idleSprite: {fileID: 21300000, guid: f178146a44de340829e1c25c4ee4c072, type: 3}
-    busySprite: {fileID: 21300000, guid: f178146a44de340829e1c25c4ee4c072, type: 3}
-    idleColor: {r: 1, g: 1, b: 1, a: 0.5}
-    busyColor: {r: 1, g: 1, b: 1, a: 1}
-    shape: 0
-    sizeUnitType: 0
-    size: {x: 15, y: 15}
-    lockAspectRatio: 1
-    worldSize: {x: 1.4999999, y: 1.4999999}
 --- !u!1 &1729687334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,7 +1923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729687334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2352877, y: 0.81, z: 0.80774903}
+  m_LocalPosition: {x: 0, y: 1, z: 5.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1421602061}
@@ -1909,6 +1936,167 @@ Transform:
   - {fileID: 487680596}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1832653287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832653289}
+  - component: {fileID: 1832653288}
+  m_Layer: 5
+  m_Name: Touch Button Control
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1832653288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832653287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c28010e244e4ca2ad9d7e8e71ecc50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anchor: 8
+  offsetUnitType: 0
+  offset: {x: -25, y: 10}
+  lockAspectRatio: 1
+  target: 19
+  allowSlideToggle: 1
+  toggleOnLeave: 0
+  pressureSensitive: 0
+  button:
+    idleSprite: {fileID: 21300000, guid: f178146a44de340829e1c25c4ee4c072, type: 3}
+    busySprite: {fileID: 21300000, guid: f178146a44de340829e1c25c4ee4c072, type: 3}
+    idleColor: {r: 1, g: 1, b: 1, a: 0.5}
+    busyColor: {r: 1, g: 1, b: 1, a: 1}
+    shape: 0
+    sizeUnitType: 0
+    size: {x: 15, y: 15}
+    lockAspectRatio: 1
+    worldSize: {x: 1.4999999, y: 1.4999999}
+--- !u!4 &1832653289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832653287}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.3888893, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1864955000}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1864954996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864955000}
+  - component: {fileID: 1864954999}
+  - component: {fileID: 1864954998}
+  - component: {fileID: 1864954997}
+  m_Layer: 0
+  m_Name: InControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1864954997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864954996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c474df4ff4c4f5bbabeb9f44d56014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchCamera: {fileID: 1686944641}
+  controlsShowGizmos: 3
+  enableControlsOnTouch: 0
+  _controlsEnabled: 1
+  controlsLayer: 5
+--- !u!114 &1864954998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864954996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b5e8de77c5b4597ae7fbfb49a95e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logDebugInfo: 1
+  invertYAxis: 0
+  useFixedUpdate: 0
+  dontDestroyOnLoad: 1
+  suspendInBackground: 0
+  updateMode: 0
+  enableICade: 0
+  enableXInput: 0
+  xInputOverrideUpdateRate: 0
+  xInputUpdateRate: 0
+  xInputOverrideBufferSize: 0
+  xInputBufferSize: 0
+  enableNativeInput: 1
+  nativeInputEnableXInput: 1
+  nativeInputEnableMFi: 1
+  nativeInputPreventSleep: 0
+  nativeInputOverrideUpdateRate: 0
+  nativeInputUpdateRate: 0
+--- !u!114 &1864954999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864954996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c07da033d3770f448a8a49e0b628ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobileControl:
+  - {fileID: 1832653287}
+  - {fileID: 1541110821}
+  - {fileID: 599822553}
+--- !u!4 &1864955000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864954996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1686944642}
+  - {fileID: 1832653289}
+  - {fileID: 1541110823}
+  - {fileID: 599822555}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2068065844
 GameObject:
@@ -2109,6 +2297,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8388168431728991622, guid: 6769c909380f4674cbab199753d98424, type: 3}
+      propertyPath: tmpCamera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8388168431728991623, guid: 6769c909380f4674cbab199753d98424, type: 3}
       propertyPath: m_Name
       value: WanderfullCharacterController
@@ -2123,7 +2315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388168431728991645, guid: 6769c909380f4674cbab199753d98424, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.89
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8388168431728991645, guid: 6769c909380f4674cbab199753d98424, type: 3}
       propertyPath: m_LocalPosition.z
