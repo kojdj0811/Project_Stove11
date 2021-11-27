@@ -11,7 +11,7 @@ public class FireWood : MonoBehaviour
             other.GetComponent<jdj.WanderfullCharacterController>();
             if (other)
             {
-                // 점수 증가
+                jdj.WanderfullCharacterController.S.WoodCount++;
                 gameObject.SetActive(false);
             }
         }
