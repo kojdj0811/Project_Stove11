@@ -48,14 +48,14 @@ private void OnEnable()
         StartCoroutine(JudgeScene());
     }
 
-    // 씬이름 판별하고 BGM재생 //씬이름은 추후에 바꿔야함 (테스트)
+    // 씬이름이 타잍틀이면 타이틀BGM재생
     public IEnumerator JudgeScene()
     {
         while (true)
         {
             yield return new WaitForSeconds(0.1f);
 
-            if (SceneManager.GetActiveScene().name == "khj_Title")
+            if (SceneManager.GetActiveScene().name == "Title")
             {
                 Debug.Log("타이틀 브금 재생");
                 SoundManager.instance.PlayBgm(titleBGM);
@@ -72,8 +72,26 @@ private void OnEnable()
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
 
-
+            //////////////////////(테스트)용 없애지 않아도 무방 /////////////////
              if (SceneManager.GetActiveScene().name == "khj_Main")
+            {
+                Debug.Log("온씬로드");
+                SoundManager.instance.StopClip();
+
+                SoundManager.instance.PlayBgm(mainBGM);
+                
+            }
+            else if(SceneManager.GetActiveScene().name == "khj_Play")
+            {
+                SoundManager.instance.StopClip();
+
+                SoundManager.instance.PlayBgm(stage01_BGM);
+            }
+
+
+            ///////////////////////////////////////////////////////////
+
+            else if (SceneManager.GetActiveScene().name == "Main")
             {
                 Debug.Log("온씬로드");
                 SoundManager.instance.StopClip();
@@ -88,17 +106,6 @@ private void OnEnable()
 
                 SoundManager.instance.PlayBgm(loadingBGM);
             }
-
-
-            
-            else if(SceneManager.GetActiveScene().name == "khj_Play")
-            {
-                SoundManager.instance.StopClip();
-
-                SoundManager.instance.PlayBgm(stage01_BGM);
-            }
-
-
             
             else if(SceneManager.GetActiveScene().name == "Stage1")
             {
@@ -133,20 +140,7 @@ private void OnEnable()
             
         
     }
-    // private void Update()
-    // {
-    //         if (SceneManager.GetActiveScene().name == "khj_Main")
-    //         {
 
-    //             SoundManager.instance.PlayBgm(mainBGM);
-                
-    //         }
-    //         else if(SceneManager.GetActiveScene().name == "khj_Play")
-    //         {
-    //             SoundManager.instance.PlayBgm(stage01_BGM);
-    //         }
-        
-    // }
 
 // 게임 시작하기 버튼 눌렀을 때
     public void OnClickStartButton() //로딩 -> 메인 씬으로 간다.// (테스트) 로 Play로 해둠
@@ -160,7 +154,7 @@ private void OnEnable()
 
 
         //메인 씬로드
-        LoadingSceneController.LoadScene("khj_Main");
+        LoadingSceneController.LoadScene("Main");
         // SceneManager.LoadScene("khj_Main");
 
         //메인BGM
@@ -177,20 +171,35 @@ private void OnEnable()
         Debug.Log("게임을 종료합니다.");
     }
 
-    // (테스트) 용
-    public void OnClickTestButton()
-    {
-        // SoundManager.instance.StopClip();
-
-        SceneManager.LoadScene("khj_Play");
-        
-        // SoundManager.instance.PlayBgm(stage01_BGM);
-
-        
-    }
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
