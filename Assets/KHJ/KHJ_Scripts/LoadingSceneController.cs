@@ -30,14 +30,6 @@ public class LoadingSceneController : MonoBehaviour
     
     void Start()
     {
-        // Debug.Log("BGM나옴");
-
-        // if (SceneManager.GetActiveScene().name == "Loading")
-        // {
-        //     SoundManager.instance.StopClip();
-        //     SoundManager.instance.PlayBgm(loadingBGM);
-        // }
-
 
         Debug.Log("BGM나옴");
 
@@ -73,6 +65,10 @@ public class LoadingSceneController : MonoBehaviour
         }
     }
 }
+
+
+
+
 
 
 

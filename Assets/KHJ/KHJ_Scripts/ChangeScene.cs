@@ -82,6 +82,13 @@ private void OnEnable()
                 
             }
 
+            else if(SceneManager.GetActiveScene().name == "Loading")
+            {
+                SoundManager.instance.StopClip();
+
+                SoundManager.instance.PlayBgm(loadingBGM);
+            }
+
 
             
             else if(SceneManager.GetActiveScene().name == "khj_Play")
@@ -184,6 +191,13 @@ private void OnEnable()
 
 
 }
+
+
+
+
+
+
+
 
 
 

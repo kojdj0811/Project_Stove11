@@ -12,13 +12,6 @@ using UnityEngine.UI;
 
 public class TitleUI : MonoBehaviour
 {
-    // public static TitleUI instance;
-
-
-    // [Header("effect 이름")]
-    // public string clickClip;
-    // public string zoomClip;
-
 
     [Header("Panel")]
     public RectTransform title;
@@ -28,6 +21,10 @@ public class TitleUI : MonoBehaviour
     public RectTransform startButton;
     public RectTransform quitButton;
 
+    // [Header("Text")]
+    // public RectTransform titleText;
+    // public Text titleText_;
+
 
     void Start()
     {
@@ -35,19 +32,47 @@ public class TitleUI : MonoBehaviour
         title.DOAnchorPos(Vector2.zero, 1f);
 
 
+        // DOTween.DoText(titleText,5,true,ScrambleMode.All).SetDelay(2);
 
+        //버튼 슈웅슈융
         startButton.DOScale(new Vector3(.8f, .8f, 0), .5f).SetLoops(-1,LoopType.Yoyo);
         
         quitButton.DOScale(new Vector3(.8f, .8f, 0), .5f).SetLoops(-1,LoopType.Yoyo);
 
-
     }
 
-/*         public void OnMouse()
-    {
-        Debug.Log("마우스위");
-    } */
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

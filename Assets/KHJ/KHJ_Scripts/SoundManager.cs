@@ -13,7 +13,7 @@ public class Sound {
 }
 #endregion
 
-
+//오디오소스 컴포넌트 중 제일 위에 있는게 BGM오디오 소스고 아래부터는 사운트이펙트 오디오 소스이다.
 public class SoundManager : MonoBehaviour {
 
     public static SoundManager instance;
@@ -24,7 +24,7 @@ public class SoundManager : MonoBehaviour {
     public Sound[] bgmSounds;
 
     public AudioSource [] audioSourcesEffects;
-    public AudioSource audioSourceBgm;
+    public AudioSource audioSourceBgm; 
 
     
     private void Awake()  // 객체 생성시 최초 실행 (그래서 싱글톤을 여기서 생성)
@@ -80,7 +80,7 @@ public class SoundManager : MonoBehaviour {
                     if (!audioSourceBgm.isPlaying)
                     {
                         audioSourceBgm.volume = .3f;
-
+                        audioSourceBgm.loop=true;
                         playSoundName[i] = bgmSounds[i].name;
                         audioSourceBgm.clip = bgmSounds[i].clip;
                         audioSourceBgm.Play();
@@ -131,6 +131,15 @@ public class SoundManager : MonoBehaviour {
     }
 
 }
+
+
+
+
+
+
+
+
+
 
 
 
