@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleBGM: TitleBGM
+  loadingBGM: LoagingBGM
   mainBGM: MainBGM
   stage01_BGM: Stage01BGM
   stage02_BGM: Stage02BGM
