@@ -5,17 +5,20 @@ using UnityEngine;
 public class MovingWallTrigger : MonoBehaviour
 {
     public GameObject Object;
+    public Renderer rend;
+    private bool isUp = false;
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (!isUp && other.tag == "Player")
         {
-            Debug.Log("Move wall");
+            isUp = true;
             MovingWall wall = Object.GetComponent<MovingWall>();
             if (wall)
             {
-                wall.WallUp();
-                gameObject.SetActive(false);
+                StartCoroutine(wall.MoveWall());
+                rend.enabled = false;
             }
         }
     }
