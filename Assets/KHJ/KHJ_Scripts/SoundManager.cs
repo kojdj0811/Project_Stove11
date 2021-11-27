@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
+
 [System.Serializable]
 public class Sound {
     public string name;
@@ -29,13 +32,16 @@ public class SoundManager : MonoBehaviour {
     }
     else  // 단 하나만 존재하게끔 새로 생긴 Sound Manager 오브젝트 인스턴스일 경우엔 파괴
         Destroy(this.gameObject); 
+
+
 }
     private void Start()
     {
-        playSoundName = new string[audioSourcesEffects.Length];
+    playSoundName = new string[audioSourcesEffects.Length];
+
     }
 
-    public void PlaySE(string _name)
+    public void PlayEffect(string _name)
     {
         for (int i = 0; i < effectSounds.Length; i++)
         {
@@ -58,7 +64,32 @@ public class SoundManager : MonoBehaviour {
         }
         Debug.Log("사운드가 사운드 매니저에 등록되지 않았습니다.");
     }
+    
+        public void PlayBgm(string _name)
+    {
+        for (int i = 0; i < bgmSounds.Length; i++)
+        {
+            if(_name == bgmSounds[i].name)
+            {
+                for (int j = 0; j < audioSourcesEffects.Length; j++)
+                {
+                    if (!audioSourcesEffects[i].isPlaying)
+                    {
+                        playSoundName[i] = bgmSounds[i].name;
+                        audioSourcesEffects[i].clip = bgmSounds[i].clip;
+                        audioSourcesEffects[j].Play();
+                        return;
 
+                    }
+                }
+                Debug.Log("모든 가용 오디오 소스가 사용중입니다.");
+                return;
+            }
+        }
+        Debug.Log("사운드가 사운드 매니저에 등록되지 않았습니다.");
+    }
+
+    
     public void StopAllSE()
     {
         for (int i = 0; i < audioSourcesEffects.Length; i++)
@@ -82,10 +113,43 @@ public class SoundManager : MonoBehaviour {
         Debug.Log("재생중인 "+ _name + " 사운드가 없습니다.");
     }
 
-    
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
