@@ -34,6 +34,8 @@ public class TitleUI : MonoBehaviour
         //슬라이드 쓔욱
         title.DOAnchorPos(Vector2.zero, 1f);
 
+
+
         startButton.DOScale(new Vector3(.8f, .8f, 0), .5f).SetLoops(-1,LoopType.Yoyo);
         
         quitButton.DOScale(new Vector3(.8f, .8f, 0), .5f).SetLoops(-1,LoopType.Yoyo);
@@ -41,11 +43,16 @@ public class TitleUI : MonoBehaviour
 
     }
 
-        public void OnMouse()
+/*         public void OnMouse()
     {
         Debug.Log("마우스위");
-    }
+    } */
 }
+
+
+
+
+
 
 
 
