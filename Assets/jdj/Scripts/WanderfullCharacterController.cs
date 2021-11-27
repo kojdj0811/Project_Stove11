@@ -16,6 +16,9 @@ namespace jdj {
         private Transform trans;
         private Rigidbody rigid;
 
+        public Animator animator;
+        private int animId_speed;
+
 
         public float forwardSpeed = 10.0f;
         public float sideSpeed = 5.0f;
@@ -27,11 +30,10 @@ namespace jdj {
         public float xzVelocityMax = 20.0f;
         public float torqueMax = 30.0f;
 
-
-
-
-
         public bool isGround = false;
+        public Transform tmpCamera;
+
+
 
 
 
@@ -40,6 +42,11 @@ namespace jdj {
             S = this;
             trans = transform;
             rigid = GetComponent<Rigidbody>();
+
+            animId_speed = Animator.StringToHash("MoveSpeed");
+
+            if(tmpCamera != null)
+                tmpCamera.gameObject.SetActive(false);
         }
 
 
@@ -56,42 +63,38 @@ namespace jdj {
                     rigid.AddExplosionForce(jumpPower, trans.position,  10.0f, 0.0f, ForceMode.VelocityChange);
                 }
             }
+
         }
 
 
         void FixedUpdate () {
-            if (controlBinding.Up.IsPressed) {
-                rigid.AddForce(trans.forward * forwardSpeed, ForceMode.Acceleration);
-            }
 
-            if (controlBinding.Down.IsPressed) {
-                rigid.AddForce(trans.forward * -forwardSpeed, ForceMode.Acceleration);
-            }
-
-            if (controlBinding.Left.IsPressed) {
-                rigid.AddForce(trans.right * -sideSpeed, ForceMode.Acceleration);
-            }
-
-            if (controlBinding.Right.IsPressed) {
-                rigid.AddForce(trans.right * sideSpeed, ForceMode.Acceleration);
-            }
+            Vector3 addForce = Vector3.zero;
+            Vector3 addTorque = Vector3.zero;
 
 
+            addForce += controlBinding.Up.Value * trans.forward * forwardSpeed;
+            addForce += controlBinding.Down.Value * trans.forward * -forwardSpeed;
+            addForce += controlBinding.Left.Value * trans.right * -sideSpeed;
+            addForce += controlBinding.Right.Value * trans.right * sideSpeed;
 
-            if (controlBinding.Left.IsPressed) {
-                rigid.AddTorque(trans.up * -torque, ForceMode.Acceleration);
-            }
+            addTorque += controlBinding.Left.Value * trans.up * -torque;
+            addTorque += controlBinding.Right.Value * trans.up * torque;
 
-            if (controlBinding.Right.IsPressed) {
-                rigid.AddTorque(trans.up * torque, ForceMode.Acceleration);
-            }
+
+            rigid.AddForce(addForce, ForceMode.Acceleration);
+            rigid.AddTorque(addTorque, ForceMode.Acceleration);
 
 
             Vector2 xzVelocity = new Vector2(rigid.velocity.x, rigid.velocity.z);
-            if(xzVelocity.magnitude > xzVelocityMax)
+            float xzSpeed = xzVelocity.magnitude;
+            if(xzSpeed > xzVelocityMax)
                 xzVelocity = xzVelocity.normalized * xzVelocityMax;
 
             rigid.velocity = new Vector3 (xzVelocity.x, Mathf.Clamp(rigid.velocity.y, yVelocityMinMax.x, yVelocityMinMax.y), xzVelocity.y);
+
+
+            animator.SetFloat(animId_speed, Mathf.Clamp01(xzSpeed/xzVelocityMax));
         }
 
 
