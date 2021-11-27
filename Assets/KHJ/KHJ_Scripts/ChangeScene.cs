@@ -57,6 +57,7 @@ private void OnEnable()
 
             if (SceneManager.GetActiveScene().name == "khj_Title")
             {
+                Debug.Log("타이틀 브금 재생");
                 SoundManager.instance.PlayBgm(titleBGM);
 
             }
@@ -183,6 +184,9 @@ private void OnEnable()
 
 
 }
+
+
+
 
 
 
