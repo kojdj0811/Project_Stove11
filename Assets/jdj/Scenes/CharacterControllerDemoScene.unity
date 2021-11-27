@@ -1275,6 +1275,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680084173}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!137 &1351423874 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6758855491475356117, guid: 6769c909380f4674cbab199753d98424, type: 3}
+  m_PrefabInstance: {fileID: 8388168432538506345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421602057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,11 +1900,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1737412727677191577, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.884804
+      value: -6.8916254
       objectReference: {fileID: 0}
     - target: {fileID: 1737412728347879781, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.884804
+      value: 7.8916254
       objectReference: {fileID: 0}
     - target: {fileID: 1737412728552251702, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_Name
@@ -1951,7 +1956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737412728585028779, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.384804
+      value: 6.3916254
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
@@ -1962,6 +1967,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6758855491475356117, guid: 6769c909380f4674cbab199753d98424, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388168431728991622, guid: 6769c909380f4674cbab199753d98424, type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 1351423874}
     - target: {fileID: 8388168431728991622, guid: 6769c909380f4674cbab199753d98424, type: 3}
       propertyPath: tmpCamera
       value: 
@@ -1970,9 +1983,21 @@ PrefabInstance:
       propertyPath: physicMaterial
       value: 
       objectReference: {fileID: 13400000, guid: 022dc08b9dc0baa4bb761b28426bfaee, type: 2}
+    - target: {fileID: 8388168431728991622, guid: 6769c909380f4674cbab199753d98424, type: 3}
+      propertyPath: colliderCenterY_sliding
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8388168431728991623, guid: 6769c909380f4674cbab199753d98424, type: 3}
       propertyPath: m_Name
       value: WanderfullCharacterController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388168431728991640, guid: 6769c909380f4674cbab199753d98424, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388168431728991640, guid: 6769c909380f4674cbab199753d98424, type: 3}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8388168431728991640, guid: 6769c909380f4674cbab199753d98424, type: 3}
       propertyPath: m_Material

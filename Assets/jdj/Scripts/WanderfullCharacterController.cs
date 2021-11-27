@@ -15,11 +15,13 @@ namespace jdj {
 
         private Transform trans;
         private Rigidbody rigid;
+        private CapsuleCollider capsuleColl;
         public PhysicMaterial physicMaterial;
 
         public Animator animator;
         private int animId_MoveSpeed;
         private int animId_SlideSpeed;
+        private int animId_IsSlideable;
 
 
         public float forwardSpeed = 40.0f;
@@ -34,12 +36,22 @@ namespace jdj {
         public float torqueMax = 30.0f;
 
         public bool isGround = false;
+
+        public float colliderCenterY_sliding = 0.5f;
+        public float colliderHeight_sliding = 1.0f;
+
+        private float colliderCenterY_stand;
+        private float colliderHeight_stand;
+
+
+
         public Transform tmpCamera;
 
 
         private float xzSpeed;
 
         private bool isSlideable = false;
+
 
 
 
@@ -51,6 +63,11 @@ namespace jdj {
 
             animId_MoveSpeed = Animator.StringToHash("MoveSpeed");
             animId_SlideSpeed = Animator.StringToHash("SlideSpeed");
+            animId_IsSlideable = Animator.StringToHash("IsSlideable");
+
+            capsuleColl = GetComponent<CapsuleCollider>();
+            colliderCenterY_stand = capsuleColl.center.y;
+            colliderHeight_stand = capsuleColl.height;
 
             if(tmpCamera != null)
                 tmpCamera.gameObject.SetActive(false);
@@ -67,25 +84,35 @@ namespace jdj {
         void Update () {
             if(isGround) {
                 if(controlBinding.Jump.WasPressed) {
-                    rigid.AddExplosionForce(jumpPower, trans.position,  10.0f, 0.0f, ForceMode.VelocityChange);
+                    // rigid.AddExplosionForce(jumpPower, trans.position,  10.0f, 0.0f, ForceMode.VelocityChange);
+                    rigid.velocity += Vector3.up * jumpPower;;
                 }
 
 
 
 
-                if(!isSlideable)
-                    isSlideable = rigid.velocity.magnitude < 13.0f;
+                if(!isSlideable) {
+                    isSlideable = rigid.velocity.magnitude < 9.0f;
+                    animator.SetBool(animId_IsSlideable, true);
 
-                if(controlBinding.Fire.WasPressed
+                    capsuleColl.center = Vector3.up * colliderCenterY_sliding;
+                    capsuleColl.height = colliderHeight_sliding;
+
+                    physicMaterial.dynamicFriction = 0.0f;
+                    physicMaterial.staticFriction = 0.0f;
+                }
+
+                if(controlBinding.Fire.WasPressed && isSlideable
                 && rigid.velocity.magnitude > 9.0f && rigid.velocity.magnitude < 13.0f
                 && animator.GetFloat(animId_MoveSpeed) > 0.5f) {
                     Vector3 addForce = new Vector2(rigid.velocity.x, rigid.velocity.z).magnitude * trans.forward * slideScale;
                     rigid.velocity += addForce;
-                    Debug.Log(rigid.velocity.magnitude);
 
                     Vector2 xzVelocity = new Vector2(rigid.velocity.x, rigid.velocity.z);
                     xzSpeed = xzVelocity.magnitude;
                     xzSpeed = 0.0f;
+
+                    isSlideable = false;
                 }
             }
 
@@ -94,8 +121,8 @@ namespace jdj {
 
 
 
-            physicMaterial.dynamicFriction = controlBinding.Fire.IsPressed ? 0.0f : 1.0f;
-            physicMaterial.staticFriction = controlBinding.Fire.IsPressed ? 0.0f : 1.0f;
+            // physicMaterial.dynamicFriction = controlBinding.Fire.IsPressed ? 0.0f : 1.0f;
+            // physicMaterial.staticFriction = controlBinding.Fire.IsPressed ? 0.0f : 1.0f;
         }
 
 
@@ -116,9 +143,10 @@ namespace jdj {
 
 
             if(controlBinding.Fire.Value == 0.0f) {
-                rigid.AddForce(addForce, ForceMode.Acceleration);
-                rigid.AddTorque(addTorque, ForceMode.Acceleration);
-
+                if(!animator.GetBool(animId_IsSlideable)) {
+                    rigid.AddForce(addForce, ForceMode.Acceleration);
+                    rigid.AddTorque(addTorque, ForceMode.Acceleration);
+                }
 
                 Vector2 xzVelocity = new Vector2(rigid.velocity.x, rigid.velocity.z);
                 xzSpeed = xzVelocity.magnitude;
@@ -136,12 +164,26 @@ namespace jdj {
 
             animator.SetFloat(animId_MoveSpeed, Mathf.Clamp01(xzSpeed/xzVelocityMax));
 
-            if(controlBinding.Fire.IsPressed && isGround) {
-                    Debug.Log(rigid.velocity.magnitude);
+            if((controlBinding.Fire.IsPressed && isGround)
+            || (!controlBinding.Up.IsPressed && !controlBinding.Down.IsPressed && !controlBinding.Left.IsPressed && !controlBinding.Right.IsPressed)
+            && rigid.velocity.magnitude < 9.0f) {
+                capsuleColl.center = Vector3.up * colliderCenterY_stand;
+                capsuleColl.height = colliderHeight_stand;
                 animator.SetFloat(animId_SlideSpeed, rigid.velocity.magnitude);
+                animator.SetBool(animId_IsSlideable, false);
+
+                if(!controlBinding.Fire.IsPressed) {
+                    physicMaterial.dynamicFriction = 1.0f;
+                    physicMaterial.staticFriction = 1.0f;
+                }
+
             } else {
                 animator.SetFloat(animId_SlideSpeed, 0.0f);
             }
+
+            if(rigid.velocity.magnitude < 9.0f)
+                animator.SetBool(animId_IsSlideable, false);
+
         }
 
 
@@ -175,6 +217,5 @@ namespace jdj {
 		{
 			controlBinding.Destroy();
 		}
-
     }
 }
