@@ -1,70 +1,200 @@
 using System.Collections;
 using System.Collections.Generic;
 
+using DG.Tweening;
+
 using UnityEngine;
+
+using UnityEngine.SceneManagement;
+
 
 public class PlayUI : MonoBehaviour
 {
-     public static UIManager instance;
+    //  public static PlayUI instance;
 
 
     [Header("effect 이름")]
     public string clickClip;
     public string zoomClip;
 
+    [Header("판넬")]
 
-    [Header("Panel")]
-    // public RectTransform title;
+    // public  GameObject   turnOffQuestionPanel;
+    public RectTransform turnOffQuestionPanel_rect;
 
-    // public RectTransform main;
-
-    // public RectTransform getOutitle;
-
-    public  GameObject   turnOffQuestionPanel;
+    bool check = false;
+    float time = 0;
 
 
-    [Header("button")]
-    public RectTransform startButton;
-    public RectTransform quitButton;
-
-    // GameObject quitQuestionPanel;
-
-/*     private void Awake()  // 객체 생성시 최초 실행 (그래서 싱글톤을 여기서 생성)
-{
-    if (instance == null)   // 최초 생성
+    public void OnClickTurnOffCreateButton()
     {
-        instance = this;  // 현재의 자기 자신(인스턴스)를 할당
-        DontDestroyOnLoad(gameObject);  // 씬 전환되도 자기 자신이 파괴되지 않고 유지되도록
-    }
-    else  
-        Destroy(this.gameObject); 
-} */
-    void Start()
-    {
-        // GameObject.Find("QuitQuestionPanel");
-        //슬라이드 쓔욱
-        // title.DOAnchorPos(Vector2.zero, 1f);
+        SoundManager.instance.PlayEffect(zoomClip);
 
-        // startButton.DOScale(new Vector3(.8f, .8f, 0), .5f).SetLoops(-1,LoopType.Yoyo);
-        
-        // quitButton.DOScale(new Vector3(.8f, .8f, 0), .5f).SetLoops(-1,LoopType.Yoyo);
+        turnOffQuestionPanel_rect.DOScale(new Vector3(1, 1, 0), .5f).SetDelay(.25f);
 
-
-    }
-
-    public void OnClickTurnOffButton()
-    {
-        turnOffQuestionPanel.SetActive(true);
+        turnOffQuestionPanel_rect.gameObject.SetActive(true);
 
     }
 
     public void OnClickTurnOff_ExitButton()
     {
+        SoundManager.instance.PlayEffect(clickClip);
+        
+        turnOffQuestionPanel_rect.DOScale(new Vector3(.1f, .1f, 0), .5f).SetDelay(.25f);
+        StartCoroutine(Wait());
+        
 
-        turnOffQuestionPanel.SetActive(false);
 
     }
+
+   public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(.26f);
+        turnOffQuestionPanel_rect.gameObject.SetActive(false);
+ 
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

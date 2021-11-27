@@ -5,23 +5,27 @@ using UnityEngine;
 
 using UnityEngine.SceneManagement;
 
-
+#region Singtone
 [System.Serializable]
 public class Sound {
     public string name;
     public AudioClip clip;
 }
+#endregion
+
 
 public class SoundManager : MonoBehaviour {
 
     public static SoundManager instance;
-    public AudioSource [] audioSourcesEffects;
-    public AudioSource audioSourceBgm;
 
     public string[] playSoundName;
 
     public Sound[] effectSounds;
     public Sound[] bgmSounds;
+
+    public AudioSource [] audioSourcesEffects;
+    public AudioSource audioSourceBgm;
+
     
     private void Awake()  // 객체 생성시 최초 실행 (그래서 싱글톤을 여기서 생성)
 {
@@ -49,10 +53,10 @@ public class SoundManager : MonoBehaviour {
             {
                 for (int j = 0; j < audioSourcesEffects.Length; j++)
                 {
-                    if (!audioSourcesEffects[i].isPlaying)
-                    {
-                        playSoundName[i] = effectSounds[i].name;
-                        audioSourcesEffects[i].clip = effectSounds[i].clip;
+                    if (!audioSourcesEffects[j].isPlaying)
+                    {                        
+                        playSoundName[j] = effectSounds[i].name;
+                        audioSourcesEffects[j].clip = effectSounds[i].clip;
                         audioSourcesEffects[j].Play();
                         return;
 
@@ -71,13 +75,15 @@ public class SoundManager : MonoBehaviour {
         {
             if(_name == bgmSounds[i].name)
             {
-                for (int j = 0; j < audioSourcesEffects.Length; j++)
+                // for (int j = 0; j < audioSourcesEffects.Length; j++)
                 {
-                    if (!audioSourcesEffects[i].isPlaying)
+                    if (!audioSourceBgm.isPlaying)
                     {
+                        audioSourceBgm.volume = .3f;
+
                         playSoundName[i] = bgmSounds[i].name;
-                        audioSourcesEffects[i].clip = bgmSounds[i].clip;
-                        audioSourcesEffects[j].Play();
+                        audioSourceBgm.clip = bgmSounds[i].clip;
+                        audioSourceBgm.Play();
                         return;
 
                     }
@@ -87,6 +93,13 @@ public class SoundManager : MonoBehaviour {
             }
         }
         Debug.Log("사운드가 사운드 매니저에 등록되지 않았습니다.");
+
+
+        
+    }
+    public void StopClip()
+    {
+        audioSourceBgm.clip = null;
     }
 
     
@@ -95,7 +108,9 @@ public class SoundManager : MonoBehaviour {
         for (int i = 0; i < audioSourcesEffects.Length; i++)
         {
             audioSourcesEffects[i].Stop();
+
         }
+      
 
     }
 
@@ -106,14 +121,121 @@ public class SoundManager : MonoBehaviour {
             if(playSoundName[i]==_name)
             {
                 audioSourcesEffects[i].Stop();
+
                 return;
 
             }
         }
+
         Debug.Log("재생중인 "+ _name + " 사운드가 없습니다.");
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
