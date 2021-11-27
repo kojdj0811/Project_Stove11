@@ -36,8 +36,8 @@ public class ControlBinding : PlayerActionSet
         // playerActions.Back.AddDefaultBinding( Key.Shift, Key.Tab );
         // playerActions.Next.AddDefaultBinding( KeyCombo.With( Key.Tab ).AndNot( Key.Shift ) );
 
-        // controlBinding.Fire.AddDefaultBinding( Key.A );
-        // controlBinding.Fire.AddDefaultBinding( InputControlType.Action1 );
+        controlBinding.Fire.AddDefaultBinding( Key.LeftShift );
+        controlBinding.Fire.AddDefaultBinding( InputControlType.Action2 );
         // playerActions.Fire.AddDefaultBinding( Mouse.LeftButton );
 
         controlBinding.Jump.AddDefaultBinding( Key.Space );

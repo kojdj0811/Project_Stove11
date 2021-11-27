@@ -15,25 +15,31 @@ namespace jdj {
 
         private Transform trans;
         private Rigidbody rigid;
+        public PhysicMaterial physicMaterial;
 
         public Animator animator;
-        private int animId_speed;
+        private int animId_MoveSpeed;
+        private int animId_SlideSpeed;
 
 
-        public float forwardSpeed = 10.0f;
-        public float sideSpeed = 5.0f;
-        public float torque = 10.0f;
+        public float forwardSpeed = 40.0f;
+        public float slideScale  = 2.0f;
+        public float sideSpeed = 0.0f;
+        public float torque = 15.0f;
 
 
-        public float jumpPower = 10.0f;
-        public Vector2 yVelocityMinMax = new Vector2(-4.5f, 2.5f);
-        public float xzVelocityMax = 20.0f;
+        public float jumpPower = 20.0f;
+        public Vector2 yVelocityMinMax = new Vector2(-5.0f, 2.0f);
+        public float xzVelocityMax = 10.0f;
         public float torqueMax = 30.0f;
 
         public bool isGround = false;
         public Transform tmpCamera;
 
 
+        private float xzSpeed;
+
+        private bool isSlideable = false;
 
 
 
@@ -43,7 +49,8 @@ namespace jdj {
             trans = transform;
             rigid = GetComponent<Rigidbody>();
 
-            animId_speed = Animator.StringToHash("MoveSpeed");
+            animId_MoveSpeed = Animator.StringToHash("MoveSpeed");
+            animId_SlideSpeed = Animator.StringToHash("SlideSpeed");
 
             if(tmpCamera != null)
                 tmpCamera.gameObject.SetActive(false);
@@ -62,8 +69,33 @@ namespace jdj {
                 if(controlBinding.Jump.WasPressed) {
                     rigid.AddExplosionForce(jumpPower, trans.position,  10.0f, 0.0f, ForceMode.VelocityChange);
                 }
+
+
+
+
+                if(!isSlideable)
+                    isSlideable = rigid.velocity.magnitude < 13.0f;
+
+                if(controlBinding.Fire.WasPressed
+                && rigid.velocity.magnitude > 9.0f && rigid.velocity.magnitude < 13.0f
+                && animator.GetFloat(animId_MoveSpeed) > 0.5f) {
+                    Vector3 addForce = new Vector2(rigid.velocity.x, rigid.velocity.z).magnitude * trans.forward * slideScale;
+                    rigid.velocity += addForce;
+                    Debug.Log(rigid.velocity.magnitude);
+
+                    Vector2 xzVelocity = new Vector2(rigid.velocity.x, rigid.velocity.z);
+                    xzSpeed = xzVelocity.magnitude;
+                    xzSpeed = 0.0f;
+                }
             }
 
+
+
+
+
+
+            physicMaterial.dynamicFriction = controlBinding.Fire.IsPressed ? 0.0f : 1.0f;
+            physicMaterial.staticFriction = controlBinding.Fire.IsPressed ? 0.0f : 1.0f;
         }
 
 
@@ -82,19 +114,34 @@ namespace jdj {
             addTorque += controlBinding.Right.Value * trans.up * torque;
 
 
-            rigid.AddForce(addForce, ForceMode.Acceleration);
-            rigid.AddTorque(addTorque, ForceMode.Acceleration);
+
+            if(controlBinding.Fire.Value == 0.0f) {
+                rigid.AddForce(addForce, ForceMode.Acceleration);
+                rigid.AddTorque(addTorque, ForceMode.Acceleration);
 
 
-            Vector2 xzVelocity = new Vector2(rigid.velocity.x, rigid.velocity.z);
-            float xzSpeed = xzVelocity.magnitude;
-            if(xzSpeed > xzVelocityMax)
-                xzVelocity = xzVelocity.normalized * xzVelocityMax;
+                Vector2 xzVelocity = new Vector2(rigid.velocity.x, rigid.velocity.z);
+                xzSpeed = xzVelocity.magnitude;
+                if(xzSpeed > xzVelocityMax)
+                    xzVelocity = xzVelocity.normalized * xzVelocityMax;
 
-            rigid.velocity = new Vector3 (xzVelocity.x, Mathf.Clamp(rigid.velocity.y, yVelocityMinMax.x, yVelocityMinMax.y), xzVelocity.y);
+                rigid.velocity = new Vector3 (xzVelocity.x, Mathf.Clamp(rigid.velocity.y, yVelocityMinMax.x, yVelocityMinMax.y), xzVelocity.y);
+
+            }
 
 
-            animator.SetFloat(animId_speed, Mathf.Clamp01(xzSpeed/xzVelocityMax));
+
+
+
+
+            animator.SetFloat(animId_MoveSpeed, Mathf.Clamp01(xzSpeed/xzVelocityMax));
+
+            if(controlBinding.Fire.IsPressed && isGround) {
+                    Debug.Log(rigid.velocity.magnitude);
+                animator.SetFloat(animId_SlideSpeed, rigid.velocity.magnitude);
+            } else {
+                animator.SetFloat(animId_SlideSpeed, 0.0f);
+            }
         }
 
 
