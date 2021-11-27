@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/jdj/Scenes/CharacterControllerDemoScene.unity
+    guid: 89b6ef413b9572543b6800d13c2566e0
   m_configObjects: {}
