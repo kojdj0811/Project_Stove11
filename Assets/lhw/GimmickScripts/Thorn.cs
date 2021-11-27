@@ -13,6 +13,7 @@ public class Thorn : MonoBehaviour
             {
                 Debug.Log("replay");
                 // 플레이어 리젠
+                MinsuTransitionManager.DoRetryTransition();
                 // 가시에 찔리는 사운드
             }
         }

@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class FallArea : MonoBehaviour
 {
+    public float reloadSceneDelay = 1.5f;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            StartCoroutine(DoAfter());
+            MinsuTransitionManager.DoRetryTransition();
+
+            //StartCoroutine(DoAfter());
             
             Debug.Log("Fall Dead...");
         }
@@ -17,6 +21,7 @@ public class FallArea : MonoBehaviour
 
     IEnumerator DoAfter()
     {
+        yield return new WaitForSeconds(reloadSceneDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         yield return null;
