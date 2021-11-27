@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8121515025834331289}
   - component: {fileID: 8121515025834331294}
   - component: {fileID: 8121515025834331295}
-  - component: {fileID: 1618936916425324589}
   - component: {fileID: 8121515025834331293}
+  - component: {fileID: 7871627581727426587}
   m_Layer: 0
   m_Name: Thorn
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8121515025834331282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.050650597, y: 3.239936, z: -10.46}
+  m_LocalPosition: {x: 0.066, y: 3.241, z: -10.46}
   m_LocalScale: {x: 0.5, y: 0.8, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8121515025834331282}
-  m_Mesh: {fileID: 4300000, guid: 9f855ba253e08634ca312e229b14783f, type: 3}
+  m_Mesh: {fileID: 5400099024392959863, guid: 8af739bef1fe4c241895d42c6ac2f889, type: 3}
 --- !u!23 &8121515025834331295
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1618936916425324589
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8121515025834331282}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: 0}
 --- !u!114 &8121515025834331293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,3 +95,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b67f6eb9be75da4a9f08c5d1b964c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7871627581727426587
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8121515025834331282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.26951396, z: 0.5}
+  m_Center: {x: -0.000000059604645, y: 0.13475698, z: 0}

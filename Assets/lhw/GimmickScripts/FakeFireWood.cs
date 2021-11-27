@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FakeFireWood : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class FakeFireWood : MonoBehaviour
             other.GetComponent<jdj.WanderfullCharacterController>();
             if (other)
             {
-                // ÇÃ·¹ÀÌ¾î ¸®Á¨
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 // Á×´Â ¼Ò¸®
             }
         }

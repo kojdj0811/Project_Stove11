@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SnowBall : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class SnowBall : MonoBehaviour
             if (other)
             {
                 Debug.Log("replay");
-                // ÇÃ·¹ÀÌ¾î ¸®Á¨
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 // ´«¿¡ ±ò¸®´Â »ç¿îµå
             }
         }
