@@ -5,9 +5,7 @@ using UnityEngine;
 public class TrornMonster : MonoBehaviour
 {
     public float loadGap = 10f;
-    public GameObject path;
-
-    private int direction = 1; //이동속도+방향
+    private int direction = 1; 
     public float speed = 30;
 
     void Update()
