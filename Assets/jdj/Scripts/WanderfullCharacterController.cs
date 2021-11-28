@@ -48,6 +48,12 @@ namespace jdj {
 
 
         public Transform tmpCamera;
+        public ParticleSystem feetEffect;
+        private ParticleSystem.EmissionModule feetEffectEmission;
+
+        public GameObject jumpEffect;
+
+
         public GameObject[] woods;
 
 
@@ -84,6 +90,8 @@ namespace jdj {
 
             if(tmpCamera != null)
                 tmpCamera.gameObject.SetActive(false);
+
+            feetEffectEmission = feetEffect.emission;
         }
 
 
@@ -98,6 +106,12 @@ namespace jdj {
             if(isGround) {
                 if(controlBinding.Jump.WasPressed) {
                     // rigid.AddExplosionForce(jumpPower, trans.position,  10.0f, 0.0f, ForceMode.VelocityChange);
+                    GameObject fx = Instantiate(jumpEffect);
+                    fx.transform.position = jumpEffect.transform.position;
+                    fx.transform.eulerAngles = Vector3.right * 90.0f;
+                    fx.SetActive(true);
+                    Destroy(fx, 5.0f);
+
                     rigid.velocity += Vector3.up * jumpPower;;
                 }
 
@@ -131,6 +145,7 @@ namespace jdj {
             }
 
 
+            feetEffectEmission.enabled = rigid.velocity.magnitude > 5.0f;
 
 
 
