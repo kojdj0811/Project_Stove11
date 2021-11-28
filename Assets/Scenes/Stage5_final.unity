@@ -1084,7 +1084,7 @@ Transform:
   m_Children:
   - {fileID: 557015350}
   m_Father: {fileID: 2024091406}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &170228891
 BoxCollider:
@@ -6850,7 +6850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2610364497107678706, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.902586
+      value: 8.881102
       objectReference: {fileID: 0}
     - target: {fileID: 2610364497107678706, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6862,7 +6862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498015655996, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.902498
+      value: 8.881014
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498015655996, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6874,7 +6874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498151240896, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.902554
+      value: -8.881065
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498151240896, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6882,7 +6882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498151240896, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -83.68785
+      value: -83.68786
       objectReference: {fileID: 0}
     - target: {fileID: 8357441874521447490, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_Name
@@ -7629,10 +7629,10 @@ Transform:
   - {fileID: 986809175}
   - {fileID: 11499389}
   - {fileID: 815143577}
+  - {fileID: 170228890}
   - {fileID: 1081032556}
   - {fileID: 1054160087}
   - {fileID: 424288185}
-  - {fileID: 170228890}
   - {fileID: 549780592}
   - {fileID: 2145727657}
   - {fileID: 390163416}
@@ -8011,6 +8011,7 @@ GameObject:
   - component: {fileID: 2084047417}
   - component: {fileID: 2084047416}
   - component: {fileID: 2084047415}
+  - component: {fileID: 2084047418}
   m_Layer: 0
   m_Name: Cube (stove)
   m_TagString: Untagged
@@ -8040,7 +8041,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084047413}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -8094,6 +8095,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084047413}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2084047418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084047413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfea42d99605e614c9b6a6e41de7c7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2099057008
 GameObject:
   m_ObjectHideFlags: 0
