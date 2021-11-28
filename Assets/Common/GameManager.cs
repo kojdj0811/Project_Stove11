@@ -16,6 +16,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     public bool GameWon { get; set; }
     public bool GameLost { get; set; }
+
+    [HideInInspector]
     public int currentFirewood = 0;
     int maxFirewood = -1;
 
@@ -44,6 +46,11 @@ public class GameManager : MonoSingleton<GameManager>
         }
         GameLose();
     }
+    public void PickupFirewood()
+    {
+        currentFirewood++;
+        woodCountText.text = getParseWoodCount();
+    }
 
     string getParseTime(float time)
     {
@@ -52,7 +59,7 @@ public class GameManager : MonoSingleton<GameManager>
         return tokens[0] + ":" + tokens[1];
     }
 
-    string getParseWoodCount(int woodCount)
+    string getParseWoodCount()
     {
         if (maxFirewood < currentFirewood)
         {
