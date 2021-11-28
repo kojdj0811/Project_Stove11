@@ -5,17 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class SnowBall : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public Rigidbody rigid;
+
+    public void setSnowBall()
     {
-        if (other.tag == "Player")
+        rigid.isKinematic = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Player")
         {
-            other.GetComponent<jdj.WanderfullCharacterController>();
-            if (other)
-            {
-                Debug.Log("replay");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                // ´«¿¡ ±ò¸®´Â »ç¿îµå
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // ´«¿¡ ±ò¸®´Â »ç¿îµå
         }
     }
+
 }
