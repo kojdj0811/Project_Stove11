@@ -6,6 +6,7 @@ using UnityEngine;
 public class FireWood : MonoBehaviour
 {
     public string getFireWoodSound;
+    public GameObject fx;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -15,6 +16,10 @@ public class FireWood : MonoBehaviour
             {
                 jdj.WanderfullCharacterController.S.WoodCount++;
                 gameObject.SetActive(false);
+
+                GameObject go = Instantiate(fx);
+                go.SetActive(true);
+                go.transform.position = transform.position;
 
                 if (SoundManager.instance != null)
                 {
