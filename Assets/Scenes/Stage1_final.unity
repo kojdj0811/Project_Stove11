@@ -12196,6 +12196,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2610364497107678706, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.6337056
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610364497107678706, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.0984364
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610364497107678706, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610364498015655996, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.986051
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610364498015655996, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.746091
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610364498015655996, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610364498151240896, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.0844865
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610364498151240896, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.1968727
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610364498151240896, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.29
+      objectReference: {fileID: 0}
     - target: {fileID: 8357441874521447490, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_Name
       value: Essential
@@ -14133,6 +14169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfea42d99605e614c9b6a6e41de7c7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxWood: 3
 --- !u!1 &2039754757
 GameObject:
   m_ObjectHideFlags: 0
