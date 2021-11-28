@@ -35,12 +35,12 @@ public class DoTransitionMat : MonoBehaviour
         if (isFadeOut)
         {
             targetMaterial.SetFloat(materialValueName, 0f);
-            targetMaterial.DOFloat(1f, materialValueName, fadeTime).SetDelay(startDelay).SetEase(Ease.OutCubic).OnComplete(AfterComplete);
+            targetMaterial.DOFloat(1f, materialValueName, fadeTime).SetDelay(startDelay).SetEase(Ease.OutBounce).OnComplete(AfterComplete);
         }
         else
         {
             targetMaterial.SetFloat(materialValueName, 1f);
-            targetMaterial.DOFloat(0f, materialValueName, fadeTime).SetDelay(startDelay).SetEase(Ease.InCubic).OnComplete(AfterComplete);
+            targetMaterial.DOFloat(0f, materialValueName, fadeTime).SetDelay(startDelay).SetEase(Ease.OutBounce).OnComplete(AfterComplete);
         }
     }
 
