@@ -2402,7 +2402,7 @@ MonoBehaviour:
   sideSpeed: 0
   torque: 15
   jumpPower: 20
-  yVelocityMinMax: {x: -50, y: 20}
+  yVelocityMinMax: {x: -50, y: 40}
   xzVelocityMax: 10
   torqueMax: 30
   isGround: 0

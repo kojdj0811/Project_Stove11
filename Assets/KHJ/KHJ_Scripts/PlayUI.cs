@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using DG.Tweening;
 
 using UnityEngine;
-
 using UnityEngine.SceneManagement;
+
+using UnityEngine.UI;
 
 
 public class PlayUI : MonoBehaviour
@@ -13,18 +14,18 @@ public class PlayUI : MonoBehaviour
     //  public static PlayUI instance;
 
 
-    [Header("effect 이름")]
+    [Header("SoundName")]
     public string clickClip;
     public string zoomClip;
 
-    [Header("판넬")]
+    [Header("Panel")]
 
     // public  GameObject   turnOffQuestionPanel;
     public RectTransform turnOffQuestionPanel_rect;
 
-    bool check = false;
-    float time = 0;
+    [Header("UIParticle")]
 
+    public ParticleSystem retryParticle;
 
     public void OnClickTurnOffCreateButton()
     {
@@ -43,8 +44,6 @@ public class PlayUI : MonoBehaviour
         turnOffQuestionPanel_rect.DOScale(new Vector3(.1f, .1f, 0), .5f).SetDelay(.25f);
         StartCoroutine(Wait());
         
-
-
     }
 
    public IEnumerator Wait()
@@ -53,7 +52,84 @@ public class PlayUI : MonoBehaviour
         turnOffQuestionPanel_rect.gameObject.SetActive(false);
  
     }
+    public void OnClickRetry()
+    {
+        retryParticle.Play();
+        SoundManager.instance.PlayEffect(clickClip);  
+        // retryButton.DOScale(new Vector3(.5f, .5f, 0), .5f).SetLoops(-1,LoopType.Yoyo);
+
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
