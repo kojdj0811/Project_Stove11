@@ -13,12 +13,22 @@ public class Leaf : MonoBehaviour
         if(other.tag == "Player")
         {
             other.attachedRigidbody.AddExplosionForce(jumpForce, other.transform.position, 10.0f, 0.0f, ForceMode.VelocityChange);
-            SoundManager.instance.PlayEffect(jumpSound);
+
+            if (SoundManager.instance != null)
+            {
+                SoundManager.instance.PlayEffect(jumpSound);
+            }
+
             Debug.Log("jumpjump");
             // ����
         }
     }
 }
+
+
+
+
+
 
 
 

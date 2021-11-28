@@ -107,25 +107,25 @@ private void OnEnable()
                 SoundManager.instance.PlayBgm(loadingBGM);
             }
             
-            else if(SceneManager.GetActiveScene().name == "Stage1")
+            else if(SceneManager.GetActiveScene().name == "stage1_minsu0")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage01_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "Stage2")
+            else if(SceneManager.GetActiveScene().name == "stage2_minsu00")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage02_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "Stage3")
+            else if(SceneManager.GetActiveScene().name == "stage3_minsu0")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage03_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "Stage4")
+            else if(SceneManager.GetActiveScene().name == "stage4_minsu0")
             {
                 SoundManager.instance.StopClip();
 
@@ -172,6 +172,13 @@ private void OnEnable()
     }
 
 }
+
+
+
+
+
+
+
 
 
 

@@ -21,12 +21,25 @@ public class FireWood : MonoBehaviour
                 go.SetActive(true);
                 go.transform.position = transform.position;
 
-                SoundManager.instance.PlayEffect(getFireWoodSound);
+                if (SoundManager.instance != null)
+                {
+                    SoundManager.instance.PlayEffect(getFireWoodSound);
+                    // Debug.Log("돼?");
+                }
             }
         }
     }
 
 }
+
+
+
+
+
+
+
+
+
 
 
 
