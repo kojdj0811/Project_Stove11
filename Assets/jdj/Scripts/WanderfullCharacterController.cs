@@ -22,6 +22,7 @@ namespace jdj {
 
         public Animator animator;
         private int animId_MoveSpeed;
+        private int animId_JumpSpeed;
         private int animId_SlideSpeed;
         private int animId_IsSlideable;
 
@@ -82,6 +83,7 @@ namespace jdj {
             rigid = GetComponent<Rigidbody>();
 
             animId_MoveSpeed = Animator.StringToHash("MoveSpeed");
+            animId_JumpSpeed = Animator.StringToHash("JumpSpeed");
             animId_SlideSpeed = Animator.StringToHash("SlideSpeed");
             animId_IsSlideable = Animator.StringToHash("IsSlideable");
 
@@ -148,7 +150,27 @@ namespace jdj {
             feetEffectEmission.enabled = rigid.velocity.magnitude > 5.0f;
 
 
+            if(!isGround) {
+                float jumpSpeed = rigid.velocity.y;
+                
+                if(jumpSpeed > 0) {
+                    jumpSpeed = Mathf.Min((jumpPower - jumpSpeed)*2.2f, yVelocityMinMax.y) / yVelocityMinMax.y;
 
+                    jumpSpeed = 1.0f - jumpSpeed;
+                    jumpSpeed = Mathf.Clamp01(jumpSpeed * jumpSpeed * 0.8f);
+                    jumpSpeed = 1.0f - jumpSpeed;
+                    jumpSpeed = jumpSpeed * 0.5f;
+                    animator.SetFloat(animId_JumpSpeed, jumpSpeed);
+                }
+                else {
+                    jumpSpeed = Mathf.Max(-jumpSpeed*jumpSpeed, yVelocityMinMax.x) / yVelocityMinMax.x;
+                    jumpSpeed = 0.5f + jumpSpeed * 0.5f;
+                }
+
+
+            } else {
+                animator.SetFloat(animId_JumpSpeed, 0.0f);
+            }
 
             // physicMaterial.dynamicFriction = controlBinding.Fire.IsPressed ? 0.0f : 1.0f;
             // physicMaterial.staticFriction = controlBinding.Fire.IsPressed ? 0.0f : 1.0f;
@@ -214,7 +236,6 @@ namespace jdj {
 
             if(rigid.velocity.magnitude < 9.0f)
                 animator.SetBool(animId_IsSlideable, false);
-
         }
 
 
