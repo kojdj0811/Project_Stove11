@@ -218,10 +218,6 @@ namespace jdj {
             if((controlBinding.Fire.IsPressed && isGround)
             || (!controlBinding.Up.IsPressed && !controlBinding.Down.IsPressed && !controlBinding.Left.IsPressed && !controlBinding.Right.IsPressed)
             && rigid.velocity.magnitude < 9.0f) {
-                capsuleColl.center = Vector3.up * colliderCenterY_stand;
-                capsuleColl.height = colliderHeight_stand;
-                slipperyWallPhysic.enabled = true;
-
                 animator.SetFloat(animId_SlideSpeed, rigid.velocity.magnitude);
                 animator.SetBool(animId_IsSlideable, false);
 
@@ -234,8 +230,13 @@ namespace jdj {
                 animator.SetFloat(animId_SlideSpeed, 0.0f);
             }
 
-            if(rigid.velocity.magnitude < 9.0f)
+            if(rigid.velocity.magnitude < 9.0f) {
+                capsuleColl.center = Vector3.up * colliderCenterY_stand;
+                capsuleColl.height = colliderHeight_stand;
+                slipperyWallPhysic.enabled = true;
+
                 animator.SetBool(animId_IsSlideable, false);
+            }
         }
 
 
