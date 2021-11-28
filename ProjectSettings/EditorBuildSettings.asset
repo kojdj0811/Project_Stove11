@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/KHJ/0KHJ_Scene/khj_Title.unity
+    path: Assets/KHJ/KHJ_Scene/Title.unity
     guid: fd4e9d223ce76be478bc99fe5a3bf05b
+  - enabled: 1
+    path: Assets/lmj/Scenes/Main.unity
+    guid: 3fdbceb24b794c7438854676292a5f89
   - enabled: 0
     path: Assets/Minsu/Scenes/Stage1_minsu0.unity
     guid: a4e7ec8a330bd624a909c2ebd480f176

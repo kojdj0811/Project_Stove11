@@ -19,6 +19,10 @@ public class CheckStageComplete : MonoBehaviour
         {
             int woodCount = other.gameObject.GetComponent<jdj.WanderfullCharacterController>().WoodCount;
             Debug.Log("******¿Â¿€∞πºˆ: " + woodCount);
+            /*
+            int targetWoodCount = Game;
+
+            if (woodCount)*/
         }
     }
 }
