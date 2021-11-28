@@ -81,7 +81,7 @@ private void OnEnable()
                 SoundManager.instance.PlayBgm(mainBGM);
                 
             }
-            else if(SceneManager.GetActiveScene().name == "Stage1_minsu0")
+            else if(SceneManager.GetActiveScene().name == "Stage1_final")
             {
                 SoundManager.instance.StopClip();
 
@@ -107,25 +107,25 @@ private void OnEnable()
                 SoundManager.instance.PlayBgm(loadingBGM);
             }
             
-            else if(SceneManager.GetActiveScene().name == "stage1_final")
+            else if(SceneManager.GetActiveScene().name == "Stage1_final")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage01_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "stage2_final")
+            else if(SceneManager.GetActiveScene().name == "Stage2_final")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage02_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "stage3_final")
+            else if(SceneManager.GetActiveScene().name == "Stage3_final")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage03_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "stage4_final")
+            else if(SceneManager.GetActiveScene().name == "Stage4_final")
             {
                 SoundManager.instance.StopClip();
 
