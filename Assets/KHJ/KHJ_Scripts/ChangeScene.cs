@@ -55,7 +55,7 @@ private void OnEnable()
         {
             yield return new WaitForSeconds(0.1f);
 
-            if (SceneManager.GetActiveScene().name == "Title")
+            if (SceneManager.GetActiveScene().name == "Title_final")
             {
                 Debug.Log("타이틀 브금 재생");
                 SoundManager.instance.PlayBgm(titleBGM);
@@ -91,7 +91,7 @@ private void OnEnable()
 
             ///////////////////////////////////////////////////////////
 
-            else if (SceneManager.GetActiveScene().name == "Main")
+            else if (SceneManager.GetActiveScene().name == "Main_final")
             {
                 Debug.Log("온씬로드");
                 SoundManager.instance.StopClip();
@@ -107,31 +107,31 @@ private void OnEnable()
                 SoundManager.instance.PlayBgm(loadingBGM);
             }
             
-            else if(SceneManager.GetActiveScene().name == "stage1_minsu0")
+            else if(SceneManager.GetActiveScene().name == "stage1_final")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage01_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "stage2_minsu00")
+            else if(SceneManager.GetActiveScene().name == "stage2_final")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage02_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "stage3_minsu0")
+            else if(SceneManager.GetActiveScene().name == "stage3_final")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage03_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "stage4_minsu0")
+            else if(SceneManager.GetActiveScene().name == "stage4_final")
             {
                 SoundManager.instance.StopClip();
 
                 SoundManager.instance.PlayBgm(stage04_BGM);
             }
-            else if(SceneManager.GetActiveScene().name == "Stage5")
+            else if(SceneManager.GetActiveScene().name == "Stage5_final")
             {
                 SoundManager.instance.StopClip();
 
@@ -154,7 +154,7 @@ private void OnEnable()
 
 
         //메인 씬로드(테테스트)
-        LoadingSceneController.LoadScene("Main");
+        LoadingSceneController.LoadScene("Main_final");
         // LoadingSceneController.LoadScene("Stage1_minsu0");
 
         //메인BGM

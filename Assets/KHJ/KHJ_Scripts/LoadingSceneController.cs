@@ -20,7 +20,7 @@ public class LoadingSceneController : MonoBehaviour
         nextScene = sceneName;
 
 
-        SceneManager.LoadScene("Loading");
+        SceneManager.LoadScene(1);
 
 
         Debug.Log("로딩 지나감");

@@ -13,11 +13,13 @@ public class DoTransitionMat : MonoBehaviour
 {
     public bool isFadeOut = true;
     public bool isRetry = false;
+    public int targetSceneIndex = 1;
     public float fadeTime = 1f;
     public float startDelay = 0.5f;
     public Material targetMaterial;
     public string materialValueName = "_Cutoff";
     public TransitionCompleteEvent onComplete;
+    
 
     private float _cutOff = 0f;
 
@@ -51,8 +53,8 @@ public class DoTransitionMat : MonoBehaviour
         {
             if (!isRetry)
             {
-                //Next Stage
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+                //Return To Home
+                SceneManager.LoadScene(targetSceneIndex);
             }
             else
             {
