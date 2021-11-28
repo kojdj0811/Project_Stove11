@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/KHJ/KHJ_Scene/Title.unity
+    path: Assets/Scenes/Title_final.unity
     guid: fd4e9d223ce76be478bc99fe5a3bf05b
   - enabled: 1
-    path: Assets/lmj/Scenes/Main.unity
-    guid: 3fdbceb24b794c7438854676292a5f89
+    path: Assets/Scenes/Main_final.unity
+    guid: 3a59d92319761e84fada854e0bfeb839
   - enabled: 1
-    path: Assets/Minsu/Scenes/Stage1_minsu0.unity
-    guid: a4e7ec8a330bd624a909c2ebd480f176
+    path: Assets/Scenes/Stage1_final.unity
+    guid: 396a462fa84c3c04488bcdfcc473167a
   - enabled: 1
-    path: Assets/Minsu/Scenes/Stage2_minsu00.unity
-    guid: c8f1a19c31aa7ae429036d0181051fa8
+    path: Assets/Scenes/Stage2_final.unity
+    guid: ff5b9a50df6fbcf4ba171b90b3349ef6
   - enabled: 1
-    path: Assets/Minsu/Scenes/Stage3_minsu0.unity
-    guid: 7b826e5de9ef38c4399cc9abc3d3251c
+    path: Assets/Scenes/Stage3_final.unity
+    guid: d8c56f511e21e2f40bd6bc5947042ba7
   - enabled: 1
-    path: Assets/Minsu/Scenes/Stage4_minsu0.unity
-    guid: 80409df0e2c971b449dddcf7a02848f8
+    path: Assets/Scenes/Stage4_final.unity
+    guid: 45fc051167fc88e4aaddf4088a6563c6
   - enabled: 1
-    path: Assets/SMJ/Scenes_FromMinsu/Stage4_minsu0.unity
-    guid: 8485b8e940e462e419ab8037ec70965b
+    path: Assets/Scenes/Stage5_final.unity
+    guid: f19c57a2b0cd69e48bcce5a36e8b491b
   - enabled: 1
-    path: Assets/Minsu/Scenes/Ending1.unity
-    guid: 136a55a6957705641ac40c862ddce8a4
+    path: Assets/Scenes/Ending1_final.unity
+    guid: 9491c45d08a7d544281a7bb8169140cb
   m_configObjects: {}
