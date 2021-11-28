@@ -16,12 +16,25 @@ public class FireWood : MonoBehaviour
                 jdj.WanderfullCharacterController.S.WoodCount++;
                 gameObject.SetActive(false);
 
-                SoundManager.instance.PlayEffect(getFireWoodSound);
+                if (SoundManager.instance != null)
+                {
+                    SoundManager.instance.PlayEffect(getFireWoodSound);
+                    // Debug.Log("돼?");
+                }
             }
         }
     }
 
 }
+
+
+
+
+
+
+
+
+
 
 
 
