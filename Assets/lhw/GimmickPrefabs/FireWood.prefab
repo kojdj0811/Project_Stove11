@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getFireWoodSound: Diring
+  fx: {fileID: 2905948395625878456, guid: 527dcb51a521ac44b8699b217719a2b6, type: 3}
