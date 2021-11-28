@@ -81,7 +81,7 @@ private void OnEnable()
                 SoundManager.instance.PlayBgm(mainBGM);
                 
             }
-            else if(SceneManager.GetActiveScene().name == "khj_Play")
+            else if(SceneManager.GetActiveScene().name == "Stage1_minsu0")
             {
                 SoundManager.instance.StopClip();
 
@@ -153,9 +153,9 @@ private void OnEnable()
         SoundManager.instance.StopClip();
 
 
-        //메인 씬로드
+        //메인 씬로드(테테스트)
         LoadingSceneController.LoadScene("Main");
-        // SceneManager.LoadScene("khj_Main");
+        // LoadingSceneController.LoadScene("Stage1_minsu0");
 
         //메인BGM
         // SoundManager.instance.PlayBgm(mainBGM);
@@ -172,6 +172,21 @@ private void OnEnable()
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
