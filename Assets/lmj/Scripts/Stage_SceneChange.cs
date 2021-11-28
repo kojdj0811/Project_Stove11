@@ -17,6 +17,8 @@ public class Stage_SceneChange : MonoBehaviour
         if (_controller)
         {
             Debug.Log(StageNumber + " : Stage ÁøÀÔ");
+            //
+            MinsuTransitionManager.DoStartStage(StageNumber);
         }
     }
 }

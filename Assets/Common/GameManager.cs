@@ -19,7 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     [HideInInspector]
     public int currentFirewood = 0;
-    int maxFirewood = -1;
+    public int maxFirewood = -1;
 
 
     private void Start()

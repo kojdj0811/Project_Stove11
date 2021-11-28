@@ -493,6 +493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFadeOut: 1
   isRetry: 1
+  targetSceneIndex: 1
   fadeTime: 1
   startDelay: 0
   targetMaterial: {fileID: 2100000, guid: ee3537ed96c0c5343ab68af38f51b2cd, type: 2}
@@ -650,6 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFadeOut: 0
   isRetry: 0
+  targetSceneIndex: 1
   fadeTime: 1
   startDelay: 0
   targetMaterial: {fileID: 2100000, guid: ee3537ed96c0c5343ab68af38f51b2cd, type: 2}
@@ -775,8 +777,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFadeOut: 1
   isRetry: 0
-  fadeTime: 2.5
-  startDelay: 1.75
+  targetSceneIndex: 1
+  fadeTime: 3.5
+  startDelay: 1.5
   targetMaterial: {fileID: 2100000, guid: ee3537ed96c0c5343ab68af38f51b2cd, type: 2}
   materialValueName: _Cutoff
   onComplete:
