@@ -415,6 +415,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5183441276613980340, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: effectSounds.Array.data[3].name
+      value: Diring
+      objectReference: {fileID: 0}
     - target: {fileID: 5183441276613980341, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
       propertyPath: m_RootOrder
       value: 4
