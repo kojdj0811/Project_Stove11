@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/KHJ/KHJ_Scene/Title.unity
+    guid: fd4e9d223ce76be478bc99fe5a3bf05b
+  - enabled: 1
+    path: Assets/lmj/Scenes/Main.unity
+    guid: 3fdbceb24b794c7438854676292a5f89
   - enabled: 0
     path: Assets/Minsu/Scenes/Stage1_minsu0.unity
     guid: a4e7ec8a330bd624a909c2ebd480f176
@@ -17,7 +23,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Minsu/Scenes/Stage4_minsu0.unity
     guid: 80409df0e2c971b449dddcf7a02848f8
-  - enabled: 1
+  - enabled: 0
     path: Assets/SMJ/Scenes_FromMinsu/Stage4_minsu0.unity
     guid: 8485b8e940e462e419ab8037ec70965b
+  - enabled: 1
+    path: Assets/Minsu/Scenes/Ending1.unity
+    guid: 136a55a6957705641ac40c862ddce8a4
   m_configObjects: {}

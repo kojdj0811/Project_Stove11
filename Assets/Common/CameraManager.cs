@@ -38,6 +38,8 @@ public class CameraManager : MonoSingleton<CameraManager>
             Follow();
 
             ScreenShake();
+
+            FadeOutWall();
         }
     }
 
@@ -87,4 +89,46 @@ public class CameraManager : MonoSingleton<CameraManager>
         shakeRotation = power * rotationMultiplier;
         isRotating = true;
     }
+
+
+    List<MeshRenderer> oldWalls = new List<MeshRenderer>();
+    void FadeOutWall()
+    {
+        float Distance = Vector3.Distance(transform.position, target.transform.position);
+
+        Vector3 Direction = (target.transform.position - transform.position).normalized;
+
+        if (oldWalls.Count > 0)
+        {
+            for (int i = 0; i < oldWalls.Count; i++)
+            {
+                oldWalls[i].enabled = true;
+            }
+            oldWalls.Clear();
+        }
+
+        RaycastHit[] hits;
+
+        hits = Physics.RaycastAll(transform.position, Direction, Distance);
+        //hits = Physics.BoxCastAll(transform.position, new Vector3(0.1f, 0.1f, 0.1f), Direction);
+        //hits = Physics.CapsuleCastAll(transform.position, target.transform.position, 0.1f, Direction);
+
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            if (hits[i].transform.tag == "Wall")
+            {
+                var hitRenderers = hits[i].transform.GetComponentsInChildren<MeshRenderer>();
+                if(hitRenderers.Length > 0)
+                {
+                    hitRenderers[0].enabled = false;
+                    oldWalls.Add(hitRenderers[0]);
+                }
+            }
+
+        }
+
+
+    }
+
 }
