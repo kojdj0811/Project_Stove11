@@ -7,6 +7,8 @@ public class CheckStageComplete : MonoBehaviour
 {
 
 
+    public int maxWood = -1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class CheckStageComplete : MonoBehaviour
             int woodCount = other.gameObject.GetComponent<jdj.WanderfullCharacterController>().WoodCount;
             Debug.Log("******ÀåÀÛ°¹¼ö: " + woodCount);
 
-            if (true)//woodCount >= GameManager.instance.maxFirewood)
+            if (maxWood < 0 || maxWood <= jdj.WanderfullCharacterController.S.WoodCount)//woodCount >= GameManager.instance.maxFirewood)
             {
                 int currentStageNum = SceneManager.GetActiveScene().buildIndex - 1;
                 //Stage Clear

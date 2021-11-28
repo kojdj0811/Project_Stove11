@@ -2229,7 +2229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737412727677191577, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.869565
+      value: -6.8876143
       objectReference: {fileID: 0}
     - target: {fileID: 1737412727677191577, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2249,7 +2249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737412728347879781, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.869565
+      value: 7.8876143
       objectReference: {fileID: 0}
     - target: {fileID: 1737412728347879781, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2325,7 +2325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737412728585028779, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.369565
+      value: 6.3876143
       objectReference: {fileID: 0}
     - target: {fileID: 1737412728585028779, guid: afca1fcaaef47ba4099e204e08a83603, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3561,6 +3561,22 @@ PrefabInstance:
     - target: {fileID: 971398537920128548, guid: 75a3b41262985a247ab8440f551ca582, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 971398537920128550, guid: 75a3b41262985a247ab8440f551ca582, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 971398537920128550, guid: 75a3b41262985a247ab8440f551ca582, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 971398537920128550, guid: 75a3b41262985a247ab8440f551ca582, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 971398537920128550, guid: 75a3b41262985a247ab8440f551ca582, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 971398537920128551, guid: 75a3b41262985a247ab8440f551ca582, type: 3}
       propertyPath: m_RootOrder

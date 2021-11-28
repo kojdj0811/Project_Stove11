@@ -5363,6 +5363,7 @@ GameObject:
   - component: {fileID: 7239472440384266218}
   - component: {fileID: 7239472440384266228}
   - component: {fileID: 7239472440384266219}
+  - component: {fileID: 5169576772709346735}
   m_Layer: 5
   m_Name: TimerText
   m_TagString: Untagged
@@ -5432,6 +5433,19 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: '00 : 00'
+--- !u!114 &5169576772709346735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239472440384266217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208b851a25d89e849b5789c132a2c22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 7239472440384266219}
 --- !u!1 &7239472440412882014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,6 +5457,7 @@ GameObject:
   - component: {fileID: 7239472440412882015}
   - component: {fileID: 7239472440412882009}
   - component: {fileID: 7239472440412882008}
+  - component: {fileID: 1019287022428783679}
   m_Layer: 5
   m_Name: FireWoodText
   m_TagString: Untagged
@@ -5511,6 +5526,19 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: X 0
+--- !u!114 &1019287022428783679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239472440412882014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13e1211259000a46ada061afc583442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 7239472440412882008}
 --- !u!1 &7239472440967534252
 GameObject:
   m_ObjectHideFlags: 0
