@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1737412727677191577}
   - component: {fileID: 1737412727677191576}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Touch Stick Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737412727677191579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.496961, y: -3.1968722, z: -384.92316}
+  m_LocalPosition: {x: -6.8888893, y: -3, z: 2.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1737412728552251706}
@@ -96,7 +96,7 @@ MonoBehaviour:
     sizeUnitType: 0
     size: {x: 20, y: 20}
     lockAspectRatio: 1
-    worldSize: {x: 1.8031276, y: 1.8031276}
+    worldSize: {x: 1.9999999, y: 1.9999999}
   knob:
     idleSprite: {fileID: 21300000, guid: 54a1d28b302b6484d8633cc09baf1238, type: 3}
     busySprite: {fileID: 21300000, guid: 54a1d28b302b6484d8633cc09baf1238, type: 3}
@@ -106,7 +106,7 @@ MonoBehaviour:
     sizeUnitType: 0
     size: {x: 10, y: 10}
     lockAspectRatio: 1
-    worldSize: {x: 0.9015638, y: 0.9015638}
+    worldSize: {x: 0.99999994, y: 0.99999994}
   knobRange: 7.5
 --- !u!1 &1737412728347879783
 GameObject:
@@ -118,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1737412728347879781}
   - component: {fileID: 1737412728347879780}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Touch Button Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737412728347879783}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.694441, y: -2.7460904, z: -383.69073}
+  m_LocalPosition: {x: 7.8888893, y: -2.5000002, z: 2.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1737412728552251706}
@@ -168,7 +168,7 @@ MonoBehaviour:
     sizeUnitType: 0
     size: {x: 15, y: 15}
     lockAspectRatio: 1
-    worldSize: {x: 1.3523457, y: 1.3523457}
+    worldSize: {x: 1.4999999, y: 1.4999999}
 --- !u!1 &1737412728552251702
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737412728552251702}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -269,7 +269,7 @@ MonoBehaviour:
   controlsShowGizmos: 3
   enableControlsOnTouch: 0
   _controlsEnabled: 1
-  controlsLayer: 5
+  controlsLayer: 6
 --- !u!1 &1737412728585028773
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1737412728585028779}
   - component: {fileID: 1737412728585028778}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Touch Button Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737412728585028773}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.898252, y: -4.0984364, z: -383.07455}
+  m_LocalPosition: {x: 6.3888893, y: -4, z: 2.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1737412728552251706}
@@ -330,7 +330,7 @@ MonoBehaviour:
     sizeUnitType: 0
     size: {x: 15, y: 15}
     lockAspectRatio: 1
-    worldSize: {x: 1.3523457, y: 1.3523457}
+    worldSize: {x: 1.4999999, y: 1.4999999}
 --- !u!1 &1737412728697204418
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ Camera:
   m_Depth: 100
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 64
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
