@@ -43,4 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a523e615eb8e344bcf4cd014bd9608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDontDestroy: 1
+  isDontDestroy: 0
+  currentFirewood: 0
+  maxFirewood: -1

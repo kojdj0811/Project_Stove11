@@ -68,7 +68,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 94bc60d13502c5748b75da479443cdbc, type: 3}
+    m_Motion: {fileID: 7400000, guid: 1c7d617fecf0cf54683a824a2d105751, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -76,7 +76,7 @@ BlendTree:
     m_DirectBlendParameter: MoveSpeed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: a850dc38fff50cb4c98018ff89f1c4f3, type: 3}
+    m_Motion: {fileID: 7400000, guid: 8d3d09faef2b9414f963f0ebbad0353e, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -232,7 +232,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   - m_Name: JumpSpeed
     m_Type: 1
@@ -424,7 +424,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: slide
-  m_Speed: 2
+  m_Speed: 0.8
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6983693372998552393}
@@ -439,7 +439,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: cd2ee7ef872ab4640b677eddc2c2ea19, type: 3}
+  m_Motion: {fileID: 7400000, guid: 1a28e01827bd04c4392851b30cf3ef6f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -466,7 +466,7 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 0.00973565
+  m_TransitionOffset: 0
   m_ExitTime: 0.9974288
   m_HasExitTime: 0
   m_HasFixedDuration: 1
@@ -490,7 +490,7 @@ AnimatorStateMachine:
     m_Position: {x: 30, y: 420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5874272049938856601}
-    m_Position: {x: 200, y: 310, z: 0}
+    m_Position: {x: 400, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5493905417838531387}
     m_Position: {x: 320, y: 490, z: 0}

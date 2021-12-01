@@ -5,21 +5,36 @@ using UnityEngine;
 public class MovingWallTrigger : MonoBehaviour
 {
     public GameObject Object;
-    public Renderer rend;
+    //public Renderer rend;
     private bool isUp = false;
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (!isUp && other.tag == "Player")
+        jdj.WanderfullCharacterController player = other.transform.GetComponent<jdj.WanderfullCharacterController>();
+        if (!isUp && player != null)
         {
             isUp = true;
             MovingWall wall = Object.GetComponent<MovingWall>();
             if (wall)
             {
                 StartCoroutine(wall.MoveWall());
-                rend.enabled = false;
+                //rend.enabled = false;
             }
         }
     }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    jdj.WanderfullCharacterController player = other.GetComponent<jdj.WanderfullCharacterController>();
+    //    if (!isUp && player != null)
+    //    {
+    //        isUp = true;
+    //        MovingWall wall = Object.GetComponent<MovingWall>();
+    //        if (wall)
+    //        {
+    //            StartCoroutine(wall.MoveWall());
+    //            rend.enabled = false;
+    //        }
+    //    }
+    //}
 }

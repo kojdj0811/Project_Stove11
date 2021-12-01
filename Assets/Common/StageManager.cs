@@ -40,9 +40,12 @@ public class StageManager : MonoSingleton<StageManager>
     public Tuple<bool, bool, bool, bool, bool>  StageClearinfo(){ return new Tuple<bool, bool, bool, bool, bool>(is1StageClear, is2StageClear, is3StageClear, is4StageClear, is5StageClear); }
     public float GetTimeLimit()
     {
-        if (currentStage > 5) { Debug.LogError("currentStage > 5  cureentstage :" + currentStage);  return -1; }
-        else if (currentStage < 1) { Debug.LogError("currentStage < 1 cureentstage :" + currentStage); return -1; }
-        return timeLimit[currentStage - 1];
+        if (currentStage > 4) { Debug.LogError("currentStage > 4  cureentstage :" + currentStage);  return -1; }
+        else if (currentStage < 0) { Debug.LogError("currentStage < 0 cureentstage :" + currentStage); return -1; }
+        if (timeLimit != null)
+            return timeLimit[currentStage];
+        Debug.LogError("StageManager timeLimit Null GetTimeLimit");
+        return 90.0f;
     }
 
 

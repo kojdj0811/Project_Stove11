@@ -8,9 +8,6 @@ public class Stage_Door : MonoBehaviour
     private int StageNumber = -1;
 
     [SerializeField]
-    private TextMesh DoorText = null;
-
-    [SerializeField]
     private GameObject root;
 
     [SerializeField]
@@ -19,9 +16,14 @@ public class Stage_Door : MonoBehaviour
     [SerializeField]
     private float smoothRotate = 5.0f;
 
-    jdj.WanderfullCharacterController controller =  null;
-    Coroutine _openDoorCoroutine = null;
-    Coroutine _closeDoorCoroutine = null;
+    Coroutine _DoorCoroutine = null;
+
+    [SerializeField]
+    List<Mesh> meshes = new List<Mesh>();
+
+    [SerializeField]
+    MeshFilter mesh = null;
+
 
     private void Start()
     {
@@ -32,57 +34,42 @@ public class Stage_Door : MonoBehaviour
         }
 
 
-        if (StageNumber == -1 || StageNumber > 5)
+        if (StageNumber <= -1 || StageNumber > 5)
         {
             Debug.LogError("Door StageNumberError");
         }
         else
         {
-            if(StageManager.instance.GetstageClear(StageNumber))
+            if (StageManager.instance.GetstageClear(StageNumber))
             {
                 triggerCollider.enabled = false;
             }
+            mesh.mesh = meshes[StageNumber - 1];
+
+
         }
 
-        if(root == null)
+        if (root == null)
         {
             Debug.LogError("Door root == null" + gameObject.name);
-        }    
+        }
 
-        if(DoorText == null)
-        {
-            Debug.LogError("DoorText == null");
-        }
-        else
-        {
-            DoorText.text = StageNumber.ToString();
-        }
-        
+
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(controller == null)
+        jdj.WanderfullCharacterController _controller = other.GetComponent<jdj.WanderfullCharacterController>();
+        if (_controller)
         {
-            jdj.WanderfullCharacterController _controller = other.GetComponent<jdj.WanderfullCharacterController>();
-            if(_controller)
-                controller = _controller;
-        }
-        
-        if (controller)
-        {
-            if (_closeDoorCoroutine != null)
+            if(_DoorCoroutine != null)
             {
-                StopCoroutine(_closeDoorCoroutine);
-                _closeDoorCoroutine = null;
+                StopCoroutine(_DoorCoroutine);
             }
 
-            if (_openDoorCoroutine == null)
-            {
-                _openDoorCoroutine = StartCoroutine(OpenDoor());
-            }
-
-          
+            _DoorCoroutine = StartCoroutine(OpenDoor());
         }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -90,22 +77,17 @@ public class Stage_Door : MonoBehaviour
         jdj.WanderfullCharacterController _controller = other.GetComponent<jdj.WanderfullCharacterController>();
         if (_controller)
         {
-            controller = null;
-            if(_openDoorCoroutine != null)
+            if (_DoorCoroutine != null)
             {
-                StopCoroutine(_openDoorCoroutine);
-                _openDoorCoroutine = null;
+                StopCoroutine(_DoorCoroutine);
             }
-        }
 
-        if(_closeDoorCoroutine == null)
-        {
-            _closeDoorCoroutine = StartCoroutine(CloseDoor());
+            _DoorCoroutine = StartCoroutine(CloseDoor());
         }
     }
+
     IEnumerator OpenDoor()
     {
-        Debug.Log("eulerAngles : " + root.transform.localRotation.eulerAngles);
 
         while (true)
         {
@@ -115,7 +97,6 @@ public class Stage_Door : MonoBehaviour
 
             if (Mathf.Approximately(roty, 90.0f))
             {
-                _openDoorCoroutine   = null;
                 break;
             }
             else
@@ -125,7 +106,6 @@ public class Stage_Door : MonoBehaviour
 
     IEnumerator CloseDoor()
     {
-        Debug.Log("eulerAngles : " + root.transform.localRotation.eulerAngles);
         while (true)
         {
             Vector3 rot = root.transform.localRotation.eulerAngles;
@@ -134,12 +114,10 @@ public class Stage_Door : MonoBehaviour
 
             if (Mathf.Approximately(roty, 0.0f))
             {
-                _closeDoorCoroutine = null;
                 break;
             }
             else
                 yield return null;
         }
     }
-
 }

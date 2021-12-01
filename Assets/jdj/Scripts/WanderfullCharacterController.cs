@@ -65,15 +65,15 @@ namespace jdj {
 
 
 
-        private int woodCount = 0;
-        public int WoodCount {
-            set {
-                woodCount = Mathf.Clamp(value, 0, 4);
-                for (int i = 0; i < 4; i++)
-                    woods[i].SetActive(i < woodCount);
-            }
-            get => woodCount;
-        }
+        //private int woodCount = 0;
+        //public int WoodCount {
+        //    set {
+        //        woodCount = Mathf.Clamp(value, 0, 4);
+        //        for (int i = 0; i < 4; i++)
+        //            woods[i].SetActive(i < woodCount);
+        //    }
+        //    get => woodCount;
+        //}
 
 
 
@@ -116,9 +116,6 @@ namespace jdj {
 
                     rigid.velocity += Vector3.up * jumpPower;;
                 }
-
-
-
 
                 if(!isSlideable) {
                     isSlideable = rigid.velocity.magnitude < 9.0f;
@@ -192,6 +189,7 @@ namespace jdj {
             addTorque += controlBinding.Right.Value * trans.up * torque;
 
 
+            
 
             if(controlBinding.Fire.Value == 0.0f) {
                 if(!animator.GetBool(animId_IsSlideable)) {

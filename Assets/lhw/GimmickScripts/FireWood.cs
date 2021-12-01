@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class FireWood : MonoBehaviour
@@ -9,6 +9,11 @@ public class FireWood : MonoBehaviour
 
     public string getFireWoodSound;
     public GameObject fx;
+
+    private void Update()
+    {
+        transform.Rotate(Vector3.up * 100.0f * Time.deltaTime);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -18,12 +23,12 @@ public class FireWood : MonoBehaviour
                 return;
             }
 
-
-
             other.GetComponent<jdj.WanderfullCharacterController>();
             if (other)
             {
-                jdj.WanderfullCharacterController.S.WoodCount++;
+                //jdj.WanderfullCharacterController.S.WoodCount++;
+                GameManager.instance.PickupFirewood();
+
                 gameObject.SetActive(false);
 
                 if(fx != null) {
@@ -35,7 +40,6 @@ public class FireWood : MonoBehaviour
                 if (SoundManager.instance != null)
                 {
                     SoundManager.instance.PlayEffect(getFireWoodSound);
-                    // Debug.Log("돼?");
                 }
             }
         }

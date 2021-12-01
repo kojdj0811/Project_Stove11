@@ -5352,6 +5352,72 @@ MonoBehaviour:
   zoomClip: PopUp
   turnOffQuestionPanel_rect: {fileID: 7239472441056543216}
   retryParticle: {fileID: 8318990223951656296}
+--- !u!1 &3425959769277632421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8565341607461979950}
+  - component: {fileID: 6987432250022628481}
+  - component: {fileID: 5028885075440882612}
+  m_Layer: 5
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8565341607461979950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425959769277632421}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7239472440967534248}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6987432250022628481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425959769277632421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &5028885075440882612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425959769277632421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &7239472440384266217
 GameObject:
   m_ObjectHideFlags: 0
@@ -5363,7 +5429,6 @@ GameObject:
   - component: {fileID: 7239472440384266218}
   - component: {fileID: 7239472440384266228}
   - component: {fileID: 7239472440384266219}
-  - component: {fileID: 5169576772709346735}
   m_Layer: 5
   m_Name: TimerText
   m_TagString: Untagged
@@ -5433,19 +5498,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: '00 : 00'
---- !u!114 &5169576772709346735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7239472440384266217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 208b851a25d89e849b5789c132a2c22d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 7239472440384266219}
 --- !u!1 &7239472440412882014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,7 +5509,6 @@ GameObject:
   - component: {fileID: 7239472440412882015}
   - component: {fileID: 7239472440412882009}
   - component: {fileID: 7239472440412882008}
-  - component: {fileID: 1019287022428783679}
   m_Layer: 5
   m_Name: FireWoodText
   m_TagString: Untagged
@@ -5481,7 +5532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 131.01793, y: -50}
+  m_AnchoredPosition: {x: 159.7, y: -50}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7239472440412882009
@@ -5525,20 +5576,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: X 0
---- !u!114 &1019287022428783679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7239472440412882014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13e1211259000a46ada061afc583442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 7239472440412882008}
+  m_Text: 0 / 99
 --- !u!1 &7239472440967534252
 GameObject:
   m_ObjectHideFlags: 0
@@ -5573,6 +5611,7 @@ RectTransform:
   - {fileID: 2492644661076064785}
   - {fileID: 7239472441056543216}
   - {fileID: 1778959487}
+  - {fileID: 8565341607461979950}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

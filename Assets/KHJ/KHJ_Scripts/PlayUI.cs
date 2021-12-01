@@ -55,9 +55,9 @@ public class PlayUI : MonoBehaviour
     public void OnClickRetry()
     {
         retryParticle.Play();
-        SoundManager.instance.PlayEffect(clickClip);  
+        SoundManager.instance.PlayEffect(clickClip);
         // retryButton.DOScale(new Vector3(.5f, .5f, 0), .5f).SetLoops(-1,LoopType.Yoyo);
-
+        MinsuTransitionManager.DoRetryTransition();
 
     }
 }
