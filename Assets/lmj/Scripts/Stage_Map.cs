@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Stage_Map : MonoBehaviour
@@ -18,6 +19,21 @@ public class Stage_Map : MonoBehaviour
 
     [SerializeField]
     GameObject stage5;
+    
+    [SerializeField]
+    GameObject clearObj_01;
+
+   [SerializeField]
+    GameObject clearObj_02;
+
+   [SerializeField]
+    GameObject clearObj_03;
+
+   [SerializeField]
+    GameObject clearObj_04;
+    
+   [SerializeField]
+    GameObject clearObj_05;
 
     private void Start()
     {
@@ -28,28 +44,88 @@ public class Stage_Map : MonoBehaviour
     void Setup(bool isStage_1, bool isStage_2, bool isStage_3, bool isStage_4, bool isStage_5)
     {
         if (isStage_1)
-            stage1.SetActive(false);
+            clearObj_01.SetActive(true);
         else
-            stage1.SetActive(true);
+            clearObj_01.SetActive(false);
 
         if (isStage_2)
-            stage2.SetActive(false);
+            clearObj_02.SetActive(true);
         else
-            stage2.SetActive(true);
+            clearObj_02.SetActive(false);
 
         if (isStage_3)
-            stage3.SetActive(false);
+            clearObj_03.SetActive(true);
         else
-            stage3.SetActive(true);
+            clearObj_03.SetActive(false);
 
         if (isStage_4)
-            stage4.SetActive(false);
+            clearObj_04.SetActive(true);
         else
-            stage4.SetActive(true);
+            clearObj_04.SetActive(false);
 
         if (isStage_5)
-            stage5.SetActive(false);
+            clearObj_04.SetActive(true);
         else
-            stage5.SetActive(true);
+            clearObj_04.SetActive(false);
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
