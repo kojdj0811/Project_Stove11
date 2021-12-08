@@ -1,0 +1,3 @@
+        PlayerSettings.Android.keyaliasName = "mjgames";
+        PlayerSettings.keyaliasPass = "Lmj1117";
+        PlayerSettings.keystorePass = "Lmj1117";

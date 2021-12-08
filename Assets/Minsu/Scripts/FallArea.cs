@@ -17,6 +17,11 @@ public class FallArea : MonoBehaviour
             
             Debug.Log("Fall Dead...");
         }
+        else if(other.gameObject.tag.Equals("SnowBall"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Destroy SnowBall");
+        }
     }
 
     IEnumerator DoAfter()

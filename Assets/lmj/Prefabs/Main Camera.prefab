@@ -4863,7 +4863,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 200
+  far clip plane: 120
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -4907,7 +4907,6 @@ MonoBehaviour:
   dist: 10
   height: 5
   smoothRotate: 5
-  endPoint: {fileID: 0}
 --- !u!114 &1673820634
 MonoBehaviour:
   m_ObjectHideFlags: 0
