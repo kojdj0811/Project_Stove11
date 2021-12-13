@@ -52,7 +52,7 @@ namespace jdj {
         public ParticleSystem feetEffect;
         private ParticleSystem.EmissionModule feetEffectEmission;
 
-        public GameObject jumpEffect;
+        //public GameObject jumpEffect;
 
 
         public GameObject[] woods;
@@ -108,11 +108,11 @@ namespace jdj {
             if(isGround) {
                 if(controlBinding.Jump.WasPressed) {
                     // rigid.AddExplosionForce(jumpPower, trans.position,  10.0f, 0.0f, ForceMode.VelocityChange);
-                    GameObject fx = Instantiate(jumpEffect);
-                    fx.transform.position = jumpEffect.transform.position;
-                    fx.transform.eulerAngles = Vector3.right * 90.0f;
-                    fx.SetActive(true);
-                    Destroy(fx, 5.0f);
+                    //GameObject fx = Instantiate(jumpEffect);
+                    //fx.transform.position = jumpEffect.transform.position;
+                    //fx.transform.eulerAngles = Vector3.right * 90.0f;
+                    //fx.SetActive(true);
+                    //Destroy(fx, 5.0f);
 
                     rigid.velocity += Vector3.up * jumpPower;;
                 }
@@ -260,7 +260,13 @@ namespace jdj {
             {
                 if((1.0f - Vector3.Dot(Vector3.up, contact.normal)) * Mathf.Rad2Deg <  20.0f) {
                     isGround = true;
+                    animator.SetFloat(animId_JumpSpeed, 0.0f);
                     break;
+                }
+                else
+                {
+                    isGround = false;
+                    animator.SetFloat(animId_JumpSpeed, 0.5f);
                 }
             }
 
@@ -268,10 +274,10 @@ namespace jdj {
 
         void OnCollisionExit (Collision collisionInfo) {
             isGround = false;
+            animator.SetFloat(animId_JumpSpeed, 0.5f);
         }
 
-
-		void OnDisable()
+        void OnDisable()
 		{
 			controlBinding.Destroy();
 		}
