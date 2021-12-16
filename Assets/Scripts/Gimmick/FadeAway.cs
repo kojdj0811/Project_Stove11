@@ -4,32 +4,16 @@ using UnityEngine;
 
 public class FadeAway : MonoBehaviour
 {
-    public float fadeTime;
+    bool flag = false;
     public float destroyTime;
-    public Renderer rend;
-    private float alpha;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && flag == false)
         {
-            Debug.Log("g");
-            StartCoroutine(Fading());
+            flag = true;
+            Destroy(transform.gameObject, destroyTime);
         }
     }
 
-    public IEnumerator Fading()
-    {
-        alpha = rend.material.color.a;
-
-        while (alpha > 0f)
-        {
-            alpha -= Time.deltaTime / fadeTime;
-            rend.material.color = new Color(1, 1, 1, alpha);
-            yield return null;
-        }
-        Destroy(transform.parent.gameObject, destroyTime);
-        Debug.Log("b");
-        yield break;
-    }
 }

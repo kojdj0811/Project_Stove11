@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class FireWood : MonoBehaviour
 {
-    public bool isFake = false;
-
     public string getFireWoodSound;
     public GameObject fx;
     public float RotateSpeed = 100.0f;
@@ -18,11 +16,6 @@ public class FireWood : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if(isFake) {
-                MinsuTransitionManager.DoRetryTransition();
-                return;
-            }
-
             other.GetComponent<jdj.WanderfullCharacterController>();
             if (other)
             {

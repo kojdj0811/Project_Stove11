@@ -11659,7 +11659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1565910058330130931
 Transform:
   m_ObjectHideFlags: 0
@@ -12434,7 +12434,6 @@ MonoBehaviour:
   colliderHeight_sliding: 1
   tmpCamera: {fileID: 1565910058330130931}
   feetEffect: {fileID: 110298414}
-  jumpEffect: {fileID: 13565277}
   woods:
   - {fileID: 8854994249841789725}
   - {fileID: 2149213742601026373}

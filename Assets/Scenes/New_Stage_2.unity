@@ -6507,6 +6507,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingWall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 527223284990687129, guid: b8adff55c389e014185df744b4b65140, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 527223284990687129, guid: b8adff55c389e014185df744b4b65140, type: 3}
+      propertyPath: wallHeight
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 527223284990687133, guid: b8adff55c389e014185df744b4b65140, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -6525,7 +6533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 527223284990687133, guid: b8adff55c389e014185df744b4b65140, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.1
+      value: -5.02
       objectReference: {fileID: 0}
     - target: {fileID: 527223284990687133, guid: b8adff55c389e014185df744b4b65140, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6656,7 +6664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6a1286722bc374c82aced5bfb707bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFake: 0
   getFireWoodSound: Diring
   fx: {fileID: 2905948395625878456, guid: 527dcb51a521ac44b8699b217719a2b6, type: 3}
   RotateSpeed: 200
@@ -7837,7 +7844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 527223284990687133, guid: b8adff55c389e014185df744b4b65140, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3516
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 527223284990687133, guid: b8adff55c389e014185df744b4b65140, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8151,7 +8158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6a1286722bc374c82aced5bfb707bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFake: 0
   getFireWoodSound: Diring
   fx: {fileID: 2905948395625878456, guid: 527dcb51a521ac44b8699b217719a2b6, type: 3}
   RotateSpeed: 200
@@ -22683,7 +22689,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2610364497107678706, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.673004
+      value: 10.895233
       objectReference: {fileID: 0}
     - target: {fileID: 2610364497107678706, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22691,11 +22697,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610364497107678706, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -383.07468
+      value: -383.0747
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498015655996, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.4691925
+      value: 9.691452
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498015655996, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22703,11 +22709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498015655996, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -383.69086
+      value: -383.6909
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498151240896, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.2717285
+      value: -10.4939575
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498151240896, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22715,7 +22721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610364498151240896, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -384.92322
+      value: -384.92325
       objectReference: {fileID: 0}
     - target: {fileID: 7775217027430674002, guid: 404c63f3db3d04a4f95f96f58799bcf8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26709,7 +26715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7079cdacd3898054ba4f0165c943ec7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.53
+      value: -3.7047062
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7079cdacd3898054ba4f0165c943ec7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26775,7 +26781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6a1286722bc374c82aced5bfb707bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFake: 0
   getFireWoodSound: Diring
   fx: {fileID: 2905948395625878456, guid: 527dcb51a521ac44b8699b217719a2b6, type: 3}
   RotateSpeed: 200
@@ -33570,7 +33575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff6a1286722bc374c82aced5bfb707bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFake: 0
   getFireWoodSound: Diring
   fx: {fileID: 2905948395625878456, guid: 527dcb51a521ac44b8699b217719a2b6, type: 3}
   RotateSpeed: 200
