@@ -4163,11 +4163,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDontDestroy: 1
   timeLimit:
-  - 90
-  - 90
-  - 90
-  - 90
-  - 90
+  - 140
+  - 180
+  - 110
+  - 230
+  - 380
   is1StageClear: 0
   is2StageClear: 0
   is3StageClear: 0

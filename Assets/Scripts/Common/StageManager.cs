@@ -12,10 +12,15 @@ public class StageManager : MonoSingleton<StageManager>
     private List<float> timeLimit;
     int currentStage;
 
+    [HideInInspector]
     public bool is1StageClear = false;
+    [HideInInspector]
     public bool is2StageClear = false;
+    [HideInInspector]
     public bool is3StageClear = false;
+    [HideInInspector]
     public bool is4StageClear = false;
+    [HideInInspector]
     public bool is5StageClear = false;
 
     public bool GetstageClear(int stageNum)

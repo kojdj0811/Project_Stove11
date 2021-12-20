@@ -9,18 +9,48 @@ public class TrornMonster : MonoBehaviour
     private int direction = 1; 
     public float speed = 30;
 
+    private Vector3 upPosition;
+    private Vector3 downPosition;
+    [HideInInspector]
+    public bool flag = false;
+
+    private void Start()
+    {
+        upPosition = transform.position + Vector3.left * loadGap;
+        downPosition = transform.position + Vector3.left * loadGap * (-1);
+
+    }
+
+
     void Update()
     {
-        if (transform.position.x < -loadGap)
+        //if (transform.position.x < -loadGap)
+        //{
+        //    direction = -1;
+        //}
+        //else if (transform.position.x > loadGap)
+        //{
+        //    direction = 1;
+        //}
+
+        //transform.Translate(Vector3.left * Time.deltaTime * speed * direction);
+
+
+
+
+        if (flag)
         {
-            direction = -1;
+            transform.Translate(Vector3.left * Time.deltaTime * speed * direction);
         }
-        else if (transform.position.x > loadGap)
+        else
         {
-            direction = 1;
+            transform.Translate(Vector3.left * Time.deltaTime * speed * direction);
         }
 
-        transform.Translate(Vector3.left * Time.deltaTime * speed * direction);
+        if (Mathf.Approximately(transform.position.x, upPosition.x) || Mathf.Approximately(transform.position.x, downPosition.x))
+        {
+            flag = !flag;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

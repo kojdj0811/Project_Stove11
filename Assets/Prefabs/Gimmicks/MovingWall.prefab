@@ -108,5 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9528780ef323c674aa80b33c25527bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  wallHeight: 50
+  speed: 1
+  flag: 0
+  wallHeight: 5

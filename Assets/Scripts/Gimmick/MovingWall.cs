@@ -6,6 +6,7 @@ public class MovingWall : MonoBehaviour
     public float speed;
     private Vector3 upPosition;
     private Vector3 downPosition;
+    [HideInInspector]
     public bool flag = false;
 
     public float wallHeight;
