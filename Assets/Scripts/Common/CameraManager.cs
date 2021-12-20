@@ -13,7 +13,9 @@ public class CameraManager : MonoSingleton<CameraManager>
     [Header("Follow Variables"), SerializeField]
     private Transform target;
     public float dist = 10.0f;
-    public float height = 5.0f;
+    public float Groundheight = 5.0f;
+    public float DownhillGroundxheight = 20.0f;
+    float height = 0f;
     public float smoothRotate = 5.0f;
     private Transform tr;
 
@@ -30,6 +32,7 @@ public class CameraManager : MonoSingleton<CameraManager>
     {
         tr = GetComponent<Transform>();
         isInit = true;
+        height = Groundheight;
     }
     void LateUpdate()
     {
@@ -49,7 +52,37 @@ public class CameraManager : MonoSingleton<CameraManager>
         float currYAngle = Mathf.LerpAngle(tr.eulerAngles.y, target.eulerAngles.y, smoothRotate * Time.deltaTime);
 
         Quaternion rot = Quaternion.Euler(0, currYAngle, 0);
-        tr.position = target.position - (rot * Vector3.forward * dist) + (Vector3.up*height);
+
+
+
+        float Distance = Vector3.Distance(transform.position, target.transform.position);
+        //Vector3 Direction = (target.transform.position - transform.position).normalized;
+        
+        RaycastHit[] hits;
+        hits = Physics.RaycastAll(target.transform.position, Vector3.up * -1, Distance);
+
+        bool bFlag = false;
+        for(int i = 0; i < hits.Length; i++)
+        {
+            if(hits[i].transform.tag == "DownhillGround")
+            {
+                bFlag = true;
+                break;
+            }
+        }
+
+        if(bFlag)
+        {
+            height = Mathf.Lerp(height, DownhillGroundxheight, Time.deltaTime);
+        }
+        else
+        {
+            height = Mathf.Lerp(height, Groundheight, Time.deltaTime);
+        }
+
+
+
+        tr.position = target.position - (rot * Vector3.forward * dist) + (Vector3.up* height);
         tr.LookAt(target);
     }
 
