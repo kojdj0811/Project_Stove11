@@ -5,52 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class TrornMonster : MonoBehaviour
 {
-    public float loadGap = 10f;
-    private int direction = 1; 
-    public float speed = 30;
-
-    private Vector3 upPosition;
-    private Vector3 downPosition;
-    [HideInInspector]
-    public bool flag = false;
-
+    uTools.TweenPosition tweenPosition;
+    [SerializeField]
+    private float distance = 5.0f;
     private void Start()
     {
-        upPosition = transform.position + Vector3.left * loadGap;
-        downPosition = transform.position + Vector3.left * loadGap * (-1);
+        tweenPosition = GetComponent<uTools.TweenPosition>();
+        Vector3 from = transform.position + (transform.right * (distance/2.0f));
+        Vector3 to = transform.position + (-1* transform.right * (distance / 2.0f));
 
-    }
+        tweenPosition.from = from;
+        tweenPosition.to = to;
 
-
-    void Update()
-    {
-        //if (transform.position.x < -loadGap)
-        //{
-        //    direction = -1;
-        //}
-        //else if (transform.position.x > loadGap)
-        //{
-        //    direction = 1;
-        //}
-
-        //transform.Translate(Vector3.left * Time.deltaTime * speed * direction);
-
-
-
-
-        if (flag)
-        {
-            transform.Translate(Vector3.left * Time.deltaTime * speed * direction);
-        }
-        else
-        {
-            transform.Translate(Vector3.left * Time.deltaTime * speed * direction);
-        }
-
-        if (Mathf.Approximately(transform.position.x, upPosition.x) || Mathf.Approximately(transform.position.x, downPosition.x))
-        {
-            flag = !flag;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
