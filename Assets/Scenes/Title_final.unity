@@ -472,6 +472,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 304727853, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 304727854, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 304727855, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 304727856, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 304727858, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 304727860, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 304727861, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 304727862, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 799635768, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358340616, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5183441276613980340, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
       propertyPath: effectSounds.Array.data[3].name
       value: Diring
@@ -524,6 +564,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5183441276613980344, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: Pan2D
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183441276613980344, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183441276613980345, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183441276613980346, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: Pan2D
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183441276613980346, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183441276613980347, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25928d989bef1354f83c5f0444c7b6b1, type: 3}
 --- !u!1001 &5452842943555160435
@@ -533,6 +597,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1425710898, guid: fad52c83b01b3884784661bc8627b4f8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452842943424959988, guid: fad52c83b01b3884784661bc8627b4f8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fb007e8317dcf034da7bf86fb93cd274, type: 3}
     - target: {fileID: 5452842943769017106, guid: fad52c83b01b3884784661bc8627b4f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0

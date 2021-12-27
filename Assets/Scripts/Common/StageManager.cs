@@ -10,7 +10,7 @@ public class StageManager : MonoSingleton<StageManager>
 {
     [SerializeField]
     private List<float> timeLimit;
-    int currentStage;
+    public int currentStage;
 
     [HideInInspector]
     public bool is1StageClear = false;
